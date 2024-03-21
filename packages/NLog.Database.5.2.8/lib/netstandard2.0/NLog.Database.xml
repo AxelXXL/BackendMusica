@@ -1,0 +1,455 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NLog.Database</name>
+    </assembly>
+    <members>
+        <member name="T:NLog.Targets.DatabaseCommandInfo">
+            <summary>
+            Information about database command + parameters.
+            </summary>
+        </member>
+        <member name="P:NLog.Targets.DatabaseCommandInfo.CommandType">
+            <summary>
+            Gets or sets the type of the command.
+            </summary>
+            <value>The type of the command.</value>
+            <docgen category='Command Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseCommandInfo.ConnectionString">
+            <summary>
+            Gets or sets the connection string to run the command against. If not provided, connection string from the target is used.
+            </summary>
+            <docgen category='Command Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseCommandInfo.Text">
+            <summary>
+            Gets or sets the command text.
+            </summary>
+            <docgen category='Command Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseCommandInfo.IgnoreFailures">
+            <summary>
+            Gets or sets a value indicating whether to ignore failures.
+            </summary>
+            <docgen category='Command Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseCommandInfo.Parameters">
+            <summary>
+            Gets the collection of parameters. Each parameter contains a mapping
+            between NLog layout and a database named or positional parameter.
+            </summary>
+            <docgen category='Command Options' order='10' />
+        </member>
+        <member name="T:NLog.Targets.DatabaseObjectPropertyInfo">
+            <summary>
+            Information about object-property for the database-connection-object
+            </summary>
+        </member>
+        <member name="M:NLog.Targets.DatabaseObjectPropertyInfo.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLog.Targets.DatabaseObjectPropertyInfo"/> class.
+            </summary>
+        </member>
+        <member name="P:NLog.Targets.DatabaseObjectPropertyInfo.Name">
+            <summary>
+            Gets or sets the name for the object-property
+            </summary>
+            <docgen category='Connection Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseObjectPropertyInfo.Layout">
+            <summary>
+            Gets or sets the value to assign on the object-property
+            </summary>
+            <docgen category='Connection Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseObjectPropertyInfo.PropertyType">
+            <summary>
+            Gets or sets the type of the object-property
+            </summary>
+            <docgen category='Connection Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseObjectPropertyInfo.Format">
+            <summary>
+            Gets or sets convert format of the property value
+            </summary>
+            <docgen category='Connection Options' order='8' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseObjectPropertyInfo.Culture">
+            <summary>
+            Gets or sets the culture used for parsing property string-value for type-conversion
+            </summary>
+            <docgen category='Connection Options' order='9' />
+        </member>
+        <member name="M:NLog.Targets.DatabaseObjectPropertyInfo.RenderValue(NLog.LogEventInfo)">
+            <summary>
+            Render Result Value
+            </summary>
+            <param name="logEvent">Log event for rendering</param>
+            <returns>Result value when available, else fallback to defaultValue</returns>
+        </member>
+        <member name="T:NLog.Targets.DatabaseParameterInfo">
+            <summary>
+            Represents a parameter to a Database target.
+            </summary>
+        </member>
+        <member name="M:NLog.Targets.DatabaseParameterInfo.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLog.Targets.DatabaseParameterInfo" /> class.
+            </summary>
+        </member>
+        <member name="M:NLog.Targets.DatabaseParameterInfo.#ctor(System.String,NLog.Layouts.Layout)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLog.Targets.DatabaseParameterInfo" /> class.
+            </summary>
+            <param name="parameterName">Name of the parameter.</param>
+            <param name="parameterLayout">The parameter layout.</param>
+        </member>
+        <member name="P:NLog.Targets.DatabaseParameterInfo.Name">
+            <summary>
+            Gets or sets the database parameter name.
+            </summary>
+            <docgen category='Parameter Options' order='0' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseParameterInfo.Layout">
+            <summary>
+            Gets or sets the layout that should be use to calculate the value for the parameter.
+            </summary>
+            <docgen category='Parameter Options' order='1' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseParameterInfo.DbType">
+            <summary>
+            Gets or sets the database parameter DbType.
+            </summary>
+            <docgen category='Parameter Options' order='2' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseParameterInfo.Size">
+            <summary>
+            Gets or sets the database parameter size.
+            </summary>
+            <docgen category='Parameter Options' order='3' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseParameterInfo.Precision">
+            <summary>
+            Gets or sets the database parameter precision.
+            </summary>
+            <docgen category='Parameter Options' order='4' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseParameterInfo.Scale">
+            <summary>
+            Gets or sets the database parameter scale.
+            </summary>
+            <docgen category='Parameter Options' order='5' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseParameterInfo.ParameterType">
+            <summary>
+            Gets or sets the type of the parameter.
+            </summary>
+            <docgen category='Parameter Options' order='6' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseParameterInfo.DefaultValue">
+            <summary>
+            Gets or sets the fallback value when result value is not available
+            </summary>
+            <docgen category='Parameter Options' order='7' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseParameterInfo.Format">
+            <summary>
+            Gets or sets convert format of the database parameter value.
+            </summary>
+            <docgen category='Parameter Options' order='8' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseParameterInfo.Culture">
+            <summary>
+            Gets or sets the culture used for parsing parameter string-value for type-conversion
+            </summary>
+            <docgen category='Parameter Options' order='9' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseParameterInfo.AllowDbNull">
+            <summary>
+            Gets or sets whether empty value should translate into DbNull. Requires database column to allow NULL values.
+            </summary>
+            <docgen category='Parameter Options' order='10' />
+        </member>
+        <member name="M:NLog.Targets.DatabaseParameterInfo.RenderValue(NLog.LogEventInfo)">
+            <summary>
+            Render Result Value
+            </summary>
+            <param name="logEvent">Log event for rendering</param>
+            <returns>Result value when available, else fallback to defaultValue</returns>
+        </member>
+        <member name="T:NLog.Targets.DatabaseTarget">
+            <summary>
+            Writes log messages to the database using an ADO.NET provider.
+            </summary>
+            <remarks>
+            <para>
+            Note .NET Core application cannot load connectionstrings from app.config / web.config. Instead use ${configsetting}
+            </para>
+            <a href="https://github.com/nlog/nlog/wiki/Database-target">See NLog Wiki</a>
+            </remarks>
+            <seealso href="https://github.com/nlog/nlog/wiki/Database-target">Documentation on NLog Wiki</seealso>
+            <example>
+            <para>
+            The configuration is dependent on the database type, because
+            there are different methods of specifying connection string, SQL
+            command and command parameters.
+            </para>
+            <para>MS SQL Server using System.Data.SqlClient:</para>
+            <code lang="XML" source="examples/targets/Configuration File/Database/MSSQL/NLog.config" height="450" />
+            <para>Oracle using System.Data.OracleClient:</para>
+            <code lang="XML" source="examples/targets/Configuration File/Database/Oracle.Native/NLog.config" height="350" />
+            <para>Oracle using System.Data.OleDBClient:</para>
+            <code lang="XML" source="examples/targets/Configuration File/Database/Oracle.OleDB/NLog.config" height="350" />
+            <para>To set up the log target programmatically use code like this (an equivalent of MSSQL configuration):</para>
+            <code lang="C#" source="examples/targets/Configuration API/Database/MSSQL/Example.cs" height="630" />
+            </example>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLog.Targets.DatabaseTarget" /> class.
+            </summary>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLog.Targets.DatabaseTarget" /> class.
+            </summary>
+            <param name="name">Name of the target.</param>
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.DBProvider">
+            <summary>
+            Gets or sets the name of the database provider.
+            </summary>
+            <remarks>
+            <para>
+            The parameter name should be a provider invariant name as registered in machine.config or app.config. Common values are:
+            </para>
+            <ul>
+            <li><c>System.Data.SqlClient</c> - <see href="https://msdn.microsoft.com/en-us/library/system.data.sqlclient.aspx">SQL Sever Client</see></li>
+            <li><c>System.Data.SqlServerCe.3.5</c> - <see href="https://www.microsoft.com/sqlserver/2005/en/us/compact.aspx">SQL Sever Compact 3.5</see></li>
+            <li><c>System.Data.OracleClient</c> - <see href="https://msdn.microsoft.com/en-us/library/system.data.oracleclient.aspx">Oracle Client from Microsoft</see> (deprecated in .NET Framework 4)</li>
+            <li><c>Oracle.DataAccess.Client</c> - <see href="https://www.oracle.com/technology/tech/windows/odpnet/index.html">ODP.NET provider from Oracle</see></li>
+            <li><c>System.Data.SQLite</c> - <see href="http://sqlite.phxsoftware.com/">System.Data.SQLite driver for SQLite</see></li>
+            <li><c>Npgsql</c> - <see href="https://www.npgsql.org/">Npgsql driver for PostgreSQL</see></li>
+            <li><c>MySql.Data.MySqlClient</c> - <see href="https://www.mysql.com/downloads/connector/net/">MySQL Connector/Net</see></li>
+            </ul>
+            <para>(Note that provider invariant names are not supported on .NET Compact Framework).</para>
+            <para>
+            Alternatively the parameter value can be be a fully qualified name of the provider 
+            connection type (class implementing <see cref="T:System.Data.IDbConnection" />) or one of the following tokens:
+            </para>
+            <ul>
+            <li><c>sqlserver</c>, <c>mssql</c>, <c>microsoft</c> or <c>msde</c> - SQL Server Data Provider</li>
+            <li><c>oledb</c> - OLEDB Data Provider</li>
+            <li><c>odbc</c> - ODBC Data Provider</li>
+            </ul>
+            </remarks>
+            <docgen category='Connection Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.ConnectionString">
+            <summary>
+            Gets or sets the connection string. When provided, it overrides the values
+            specified in DBHost, DBUserName, DBPassword, DBDatabase.
+            </summary>
+            <docgen category='Connection Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.InstallConnectionString">
+            <summary>
+            Gets or sets the connection string using for installation and uninstallation. If not provided, regular ConnectionString is being used.
+            </summary>
+            <docgen category='Installation Options' order='100' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.InstallDdlCommands">
+            <summary>
+            Gets the installation DDL commands.
+            </summary>
+            <docgen category='Installation Options' order='100' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.UninstallDdlCommands">
+            <summary>
+            Gets the uninstallation DDL commands.
+            </summary>
+            <docgen category='Installation Options' order='100' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.KeepConnection">
+            <summary>
+            Gets or sets a value indicating whether to keep the 
+            database connection open between the log events.
+            </summary>
+            <docgen category='Connection Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.DBHost">
+            <summary>
+            Gets or sets the database host name. If the ConnectionString is not provided
+            this value will be used to construct the "Server=" part of the
+            connection string.
+            </summary>
+            <docgen category='Connection Options' order='50' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.DBUserName">
+            <summary>
+            Gets or sets the database user name. If the ConnectionString is not provided
+            this value will be used to construct the "User ID=" part of the
+            connection string.
+            </summary>
+            <docgen category='Connection Options' order='50' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.DBPassword">
+            <summary>
+            Gets or sets the database password. If the ConnectionString is not provided
+            this value will be used to construct the "Password=" part of the
+            connection string.
+            </summary>
+            <docgen category='Connection Options' order='50' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.DBDatabase">
+            <summary>
+            Gets or sets the database name. If the ConnectionString is not provided
+            this value will be used to construct the "Database=" part of the
+            connection string.
+            </summary>
+            <docgen category='Connection Options' order='50' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.CommandText">
+            <summary>
+            Gets or sets the text of the SQL command to be run on each log level.
+            </summary>
+            <remarks>
+            Typically this is a SQL INSERT statement or a stored procedure call. 
+            It should use the database-specific parameters (marked as <c>@parameter</c>
+            for SQL server or <c>:parameter</c> for Oracle, other data providers
+            have their own notation) and not the layout renderers, 
+            because the latter is prone to SQL injection attacks.
+            The layout renderers should be specified as &lt;parameter /&gt; elements instead.
+            </remarks>
+            <docgen category='SQL Statement' order='10' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.CommandType">
+            <summary>
+            Gets or sets the type of the SQL command to be run on each log level.
+            </summary>
+            <remarks>
+            This specifies how the command text is interpreted, as "Text" (default) or as "StoredProcedure".
+            When using the value StoredProcedure, the commandText-property would 
+            normally be the name of the stored procedure. TableDirect method is not supported in this context.
+            </remarks>
+            <docgen category='SQL Statement' order='11' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.Parameters">
+            <summary>
+            Gets the collection of parameters. Each item contains a mapping
+            between NLog layout and a database named or positional parameter.
+            </summary>
+            <docgen category='SQL Statement' order='14' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.ConnectionProperties">
+            <summary>
+            Gets the collection of properties. Each item contains a mapping
+            between NLog layout and a property on the DbConnection instance
+            </summary>
+            <docgen category='Connection Options' order='50' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.CommandProperties">
+            <summary>
+            Gets the collection of properties. Each item contains a mapping
+            between NLog layout and a property on the DbCommand instance
+            </summary>
+            <docgen category='Connection Options' order='50' />
+        </member>
+        <member name="P:NLog.Targets.DatabaseTarget.IsolationLevel">
+            <summary>
+            Configures isolated transaction batch writing. If supported by the database, then it will improve insert performance.
+            </summary>
+            <docgen category='Performance Tuning Options' order='10' />
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.Install(NLog.Config.InstallationContext)">
+            <summary>
+            Performs installation which requires administrative permissions.
+            </summary>
+            <param name="installationContext">The installation context.</param>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.Uninstall(NLog.Config.InstallationContext)">
+            <summary>
+            Performs uninstallation which requires administrative permissions.
+            </summary>
+            <param name="installationContext">The installation context.</param>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.IsInstalled(NLog.Config.InstallationContext)">
+            <summary>
+            Determines whether the item is installed.
+            </summary>
+            <param name="installationContext">The installation context.</param>
+            <returns>
+            Value indicating whether the item is installed or null if it is not possible to determine.
+            </returns>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.InitializeTarget">
+            <inheritdoc/>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.SetConnectionType">
+            <summary>
+            Set the <see cref="P:NLog.Targets.DatabaseTarget.ConnectionType"/> to use it for opening connections to the database.
+            </summary>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.CloseTarget">
+            <inheritdoc/>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.Write(NLog.LogEventInfo)">
+            <summary>
+            Writes the specified logging event to the database. It creates
+            a new database command, prepares parameters for it by calculating
+            layouts and executes the command.
+            </summary>
+            <param name="logEvent">The logging event.</param>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.Write(System.Collections.Generic.IList{NLog.Common.AsyncLogEventInfo})">
+            <summary>
+            Writes an array of logging events to the log target. By default it iterates on all
+            events and passes them to "Write" method. Inheriting classes can use this method to
+            optimize batch writes.
+            </summary>
+            <param name="logEvents">Logging events to be written out.</param>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(NLog.LogEventInfo,System.Data.IDbConnection,System.Data.IDbTransaction)">
+            <summary>
+            Write logEvent to database
+            </summary>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.BuildConnectionString(NLog.LogEventInfo)">
+            <summary>
+            Build the connectionstring from the properties. 
+            </summary>
+            <remarks>
+             Using <see cref="P:NLog.Targets.DatabaseTarget.ConnectionString"/> at first, and falls back to the properties <see cref="P:NLog.Targets.DatabaseTarget.DBHost"/>, 
+             <see cref="P:NLog.Targets.DatabaseTarget.DBUserName"/>, <see cref="P:NLog.Targets.DatabaseTarget.DBPassword"/> and <see cref="P:NLog.Targets.DatabaseTarget.DBDatabase"/>
+            </remarks>
+            <param name="logEvent">Event to render the layout inside the properties.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.EscapeValueForConnectionString(System.String)">
+            <summary>
+            Escape quotes and semicolons.
+            See https://docs.microsoft.com/en-us/previous-versions/windows/desktop/ms722656(v=vs.85)#setting-values-that-use-reserved-characters
+            </summary>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.CreateDatabaseParameter(System.Data.IDbCommand,NLog.Targets.DatabaseParameterInfo)">
+            <summary>
+            Create database parameter
+            </summary>
+            <param name="command">Current command.</param>
+            <param name="parameterInfo">Parameter configuration info.</param>
+        </member>
+        <member name="M:NLog.Targets.DatabaseTarget.GetDatabaseParameterValue(NLog.LogEventInfo,NLog.Targets.DatabaseParameterInfo)">
+            <summary>
+            Extract parameter value from the logevent
+            </summary>
+            <param name="logEvent">Current logevent.</param>
+            <param name="parameterInfo">Parameter configuration info.</param>
+        </member>
+        <member name="T:NLog.Internal.ReflectionHelpers">
+            <summary>
+            Reflection helpers.
+            </summary>
+        </member>
+    </members>
+</doc>

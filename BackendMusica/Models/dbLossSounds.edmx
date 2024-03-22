@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BD_LOSS_SOUNDSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BD_LOSS_SOUNDSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ExceptionLog">
           <Key>
             <PropertyRef Name="Id" />
@@ -34,6 +34,7 @@
           </Key>
           <Property Name="ID_ARTISTA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre_Artista" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="Imagen_Artista" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="tb_Cancion">
           <Key>
@@ -374,8 +375,7 @@
             <End Role="tb_Seguidos" EntitySet="tb_Seguidos" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BD_LOSS_SOUNDSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -413,6 +413,7 @@
           <NavigationProperty Name="tb_Album" Relationship="Self.FK_Album_to_Artista" FromRole="tb_Artista" ToRole="tb_Album" />
           <NavigationProperty Name="tb_Cancion" Relationship="Self.FK_Cancion_to_Artista" FromRole="tb_Artista" ToRole="tb_Cancion" />
           <NavigationProperty Name="tb_Seguidos" Relationship="Self.FK_SEGUIDAS_TO_ARTISTA" FromRole="tb_Artista" ToRole="tb_Seguidos" />
+          <Property Name="Imagen_Artista" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="tb_Cancion">
           <Key>
@@ -812,6 +813,7 @@
           <EntitySetMapping Name="tb_Artista">
             <EntityTypeMapping TypeName="BD_LOSS_SOUNDSModel.tb_Artista">
               <MappingFragment StoreEntitySet="tb_Artista">
+                <ScalarProperty Name="Imagen_Artista" ColumnName="Imagen_Artista" />
                 <ScalarProperty Name="ID_ARTISTA" ColumnName="ID_ARTISTA" />
                 <ScalarProperty Name="Nombre_Artista" ColumnName="Nombre_Artista" />
               </MappingFragment>

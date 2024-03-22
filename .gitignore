@@ -9,6 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.vs\BackendMusica
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -290,6 +291,7 @@ node_modules/
 
 # Visual Studio 6 workspace options file
 *.opt
+*.vsidx
 
 # Visual Studio 6 auto-generated workspace file (contains which files were open etc.)
 *.vbw

@@ -76,7 +76,7 @@ namespace BackendMusica.Services
 
                 return new HttpResponseMessage(HttpStatusCode.InternalServerError)
                 {
-                    Content = new StringContent("Ocurrió un error inesperado. Más información: " + ex.Message)
+                    Content = new StringContent($"Ocurrió un error inesperado. Más información: {ex.Message}")
                 };
             }
         }
@@ -119,11 +119,43 @@ namespace BackendMusica.Services
             {
                 return new HttpResponseMessage(HttpStatusCode.InternalServerError)
                 {
-                    Content = new StringContent("Ocurrió un error inesperado. Más información: " + ex.Message)
+                    Content = new StringContent($"Ocurrió un error inesperado. Más información: {ex.Message}")
                 };
             }
         }
 
+        [HttpGet]
+        public HttpResponseMessage GetNovedades(int Take)
+        {
+            try
+            {
+                var songs = db.tb_Cancion.Take(Take).
+                    Select(x => new
+                    {
+                        x.ID_CANCION,
+                        x.Nombre_Cancion,
+                        x.tb_Artista.Nombre_Artista,
+                        x.tb_Album.Nombre_album,
+                        x.Caratula_Cancion,
+                        x.Ruta_Audio
+                    }).ToList();
+
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new ObjectContent<List<object>>(songs.Cast<object>().ToList(), new JsonMediaTypeFormatter())
+                };
+
+            }
+            catch(Exception ex)
+            {
+                logger.Error($"Ocurrió un error inesperado. Más información: {ex}");
+
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                {
+                    Content = new StringContent($"Ocurrió un error inesperado. Más información: {ex.Message}")
+                };
+            }
+        }
 
         [System.Web.Http.HttpGet]
         public HttpResponseMessage GetSongsPerAlbum(int ID_Album)
@@ -163,7 +195,7 @@ namespace BackendMusica.Services
             {
                 return new HttpResponseMessage(HttpStatusCode.InternalServerError)
                 {
-                    Content = new StringContent("Ocurrió un error inesperado. Más información: " + ex.Message)
+                    Content = new StringContent($"Ocurrió un error inesperado. Más información: {ex.Message}")
                 };
             }
         }

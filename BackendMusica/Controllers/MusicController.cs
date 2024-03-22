@@ -46,6 +46,14 @@ namespace BackendMusica.Controllers
             return _musicServices.GetSongsPerAlbum(ID_Album);
         }
 
+        [Auth]
+        [System.Web.Http.Route("api/GetNovedades")]
+        [System.Web.Http.HttpGet]
+        public HttpResponseMessage GetNovedades(int Take)
+        {
+            return _musicServices.GetNovedades(Take);
+        }
+
         #endregion
 
         #region POST

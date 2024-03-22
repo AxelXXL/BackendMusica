@@ -24,6 +24,7 @@ namespace BackendMusica.Models
     
         public int ID_ARTISTA { get; set; }
         public string Nombre_Artista { get; set; }
+        public byte[] Imagen_Artista { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_Album> tb_Album { get; set; }

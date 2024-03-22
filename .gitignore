@@ -9,6 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+BackendMusica\BackendMusica\.vs\BackendMusica
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

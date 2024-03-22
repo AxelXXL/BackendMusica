@@ -53,6 +53,14 @@ namespace BackendMusica.Controllers
         {
             return _musicServices.GetNovedades(Take);
         }
+        
+        [Auth]
+        [System.Web.Http.Route("api/SearchSongs")]
+        [System.Web.Http.HttpGet]
+        public HttpResponseMessage SearchSongs(string txt)
+        {
+            return _musicServices.SearchSongs(txt);
+        }
 
         #endregion
 

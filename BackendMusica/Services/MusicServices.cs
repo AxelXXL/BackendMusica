@@ -157,6 +157,41 @@ namespace BackendMusica.Services
             }
         }
 
+        [HttpGet]
+        public HttpResponseMessage SearchSongs(string txt)
+        {
+            try
+            {
+                var items = db.tb_Cancion
+                .Where(x => x.Nombre_Cancion.Contains(txt)
+                || x.tb_Album.Nombre_album.Contains(txt)
+                || x.tb_Album.Genero.Contains(txt)
+                || x.tb_Artista.Nombre_Artista.Contains(txt))
+                .Select(x => new
+                {
+                    x.ID_CANCION,
+                    x.Nombre_Cancion,
+                    x.tb_Artista.Nombre_Artista,
+                    x.tb_Album.Nombre_album
+                })
+                .ToList();
+
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new ObjectContent<List<object>>(items.Cast<object>().ToList(), new JsonMediaTypeFormatter())
+                };
+            }
+            catch(Exception ex)
+            {
+                logger.Error(ex);
+
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                {
+                    Content = new StringContent($"Ocurrió un error inesperado. Más información: {ex.Message}")
+                };
+            }
+        }
+
         [System.Web.Http.HttpGet]
         public HttpResponseMessage GetSongsPerAlbum(int ID_Album)
         {

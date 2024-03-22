@@ -10,7 +10,7 @@
 *.userosscache
 *.sln.docstates
 BackendMusica\BackendMusica\.vs\BackendMusica
-BackendMusica\BackendMusica\.vs\BackendMusica\config\applicationhost.config
+applicationhost.config
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

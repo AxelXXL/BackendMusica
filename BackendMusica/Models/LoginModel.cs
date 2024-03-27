@@ -28,4 +28,12 @@ namespace BackendMusica.Models
         public string Nombre_Usuario { get; set; }
         public int ID_Rol { get; set; }
     }
+
+    public class EditRequestUser
+    {
+        public string Nombre_Usuario { get; set; }
+        public int ID_Rol { get; set; }
+        public bool Active { get; set; }
+    }
+
 }

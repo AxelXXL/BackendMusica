@@ -296,6 +296,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MusicController.cs" />
     <Compile Include="Controllers\TokenController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -357,6 +358,7 @@
     <Compile Include="Services\LoginServices.cs" />
     <Compile Include="Services\MusicServices.cs" />
     <Compile Include="Services\Security.cs" />
+    <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -448,6 +450,7 @@
     <Folder Include="Views\Login\" />
     <Folder Include="Views\Music\" />
     <Folder Include="Views\Token\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\bootstrap.min.js.map" />

@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\BackendMusica\\BackendMusica\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\services\\musicservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\musicservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\services\\api.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\api.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\controllers\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\controllers\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\models\\tokenmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\models\\tokenmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\services\\artistsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\artistsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\services\\auth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\auth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\services\\loginservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\loginservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 67,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,39 +50,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ArtistsService.cs",
-              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\ArtistsService.cs",
-              "RelativeDocumentMoniker": "BackendMusica\\Services\\ArtistsService.cs",
-              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\ArtistsService.cs",
-              "RelativeToolTip": "BackendMusica\\Services\\ArtistsService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABIAAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T22:01:36.1Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MusicController.cs",
-              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Controllers\\MusicController.cs",
-              "RelativeDocumentMoniker": "BackendMusica\\Controllers\\MusicController.cs",
-              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Controllers\\MusicController.cs",
-              "RelativeToolTip": "BackendMusica\\Controllers\\MusicController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
+              "Title": "TokenModel.cs",
+              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Models\\TokenModel.cs",
+              "RelativeDocumentMoniker": "BackendMusica\\Models\\TokenModel.cs",
+              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Models\\TokenModel.cs",
+              "RelativeToolTip": "BackendMusica\\Models\\TokenModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T04:10:54.534Z"
+              "WhenOpened": "2024-03-26T22:37:01.062Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MusicServices.cs",
-              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\MusicServices.cs",
-              "RelativeDocumentMoniker": "BackendMusica\\Services\\MusicServices.cs",
-              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\MusicServices.cs",
-              "RelativeToolTip": "BackendMusica\\Services\\MusicServices.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAKAAAA",
+              "Title": "API.cs",
+              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\API.cs",
+              "RelativeDocumentMoniker": "BackendMusica\\Services\\API.cs",
+              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\API.cs",
+              "RelativeToolTip": "BackendMusica\\Services\\API.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwC4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T02:01:13.61Z",
+              "WhenOpened": "2024-03-26T22:34:56.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Auth.cs",
+              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\Auth.cs",
+              "RelativeDocumentMoniker": "BackendMusica\\Services\\Auth.cs",
+              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\Auth.cs",
+              "RelativeToolTip": "BackendMusica\\Services\\Auth.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T22:34:54.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "BackendMusica\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "BackendMusica\\Controllers\\LoginController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T22:22:22.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "BackendMusica\\Models\\LoginModel.cs",
+              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Models\\LoginModel.cs",
+              "RelativeToolTip": "BackendMusica\\Models\\LoginModel.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T22:13:02.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginServices.cs",
+              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\LoginServices.cs",
+              "RelativeDocumentMoniker": "BackendMusica\\Services\\LoginServices.cs",
+              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\LoginServices.cs",
+              "RelativeToolTip": "BackendMusica\\Services\\LoginServices.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-25T22:04:49.439Z",
               "EditorCaption": ""
             }
           ]

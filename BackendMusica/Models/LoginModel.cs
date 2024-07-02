@@ -35,5 +35,4 @@ namespace BackendMusica.Models
         public int ID_Rol { get; set; }
         public bool Active { get; set; }
     }
-
 }

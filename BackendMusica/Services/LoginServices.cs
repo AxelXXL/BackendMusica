@@ -1,14 +1,11 @@
 ﻿using BackendMusica.Models;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Net.Http.Formatting;
 using System.Net.Http;
 using System.Net;
-using System.Web;
-using System.Web.Http;
 
 namespace BackendMusica.Services
 {
@@ -76,8 +73,6 @@ namespace BackendMusica.Services
             }
         }
 
-
-        [System.Web.Http.HttpPost]
         public HttpResponseMessage Login(LoginRequestModel user)
         {
             try

@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using BackendMusica.Services;
+using BackendMusica.Models;
 
 namespace UnitTestMusic
 {
@@ -16,6 +17,16 @@ namespace UnitTestMusic
 
             Assert.AreEqual(true, response);
 
+        }
+
+        [TestMethod]
+        public void T002_EncryptParams()
+        {
+            string data = "47";
+
+            var response = Security.EncryptParams(data);
+
+            Assert.AreEqual("wcxrHuIFTwsROc4SG57LtQ==", response);
         }
     }
 }

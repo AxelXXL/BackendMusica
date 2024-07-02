@@ -318,6 +318,7 @@
     <Compile Include="Models\ExceptionLog.cs">
       <DependentUpon>dbLossSounds.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ExtendModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\tb_Album.cs">
       <DependentUpon>dbLossSounds.tt</DependentUpon>

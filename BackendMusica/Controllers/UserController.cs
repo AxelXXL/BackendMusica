@@ -38,6 +38,15 @@ namespace BackendMusica.Controllers
         }
 
         [Auth]
+        [System.Web.Http.Route("api/GetRoles")]
+        [System.Web.Http.HttpGet]
+        public HttpResponseMessage CreateUser(string newUser)
+        {
+            return _userServices.CreateUser(newUser);
+        }
+
+
+        [Auth]
         [System.Web.Http.Route("api/EditUser")]
         [System.Web.Http.HttpPost]
         public HttpResponseMessage EditUser(string ID_User,[FromBody] EditRequestUser user)
@@ -49,7 +58,7 @@ namespace BackendMusica.Controllers
         [Auth]
         [System.Web.Http.Route("api/DeleteUser")]
         [System.Web.Http.HttpPost]
-        public HttpResponseMessage DeleteUser(int ID_User)
+        public HttpResponseMessage DeleteUser(string ID_User)
         {
             return _userServices.DeleteUser(ID_User);
         }

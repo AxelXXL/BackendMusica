@@ -66,6 +66,36 @@ namespace BackendMusica.Services
                 }
             }
         }
+        #endregion
+
+        #region Cryptography Params
+
+        public static string EncryptParams(string plainText, string keyString = "abc123abc123abc123abc123abc12312", string ivString = "1234567890123456")
+        {
+            byte[] key = Encoding.UTF8.GetBytes(keyString);
+            byte[] iv = Encoding.UTF8.GetBytes(ivString);
+            byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = key;
+                aes.IV = iv;
+                aes.Mode = CipherMode.CBC;
+                aes.Padding = PaddingMode.PKCS7;
+
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    using (CryptoStream cryptoStream = new CryptoStream(memoryStream, aes.CreateEncryptor(), CryptoStreamMode.Write))
+                    {
+                        cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
+                        cryptoStream.FlushFinalBlock();
+
+                        byte[] cipherTextBytes = memoryStream.ToArray();
+                        return Convert.ToBase64String(cipherTextBytes);
+                    }
+                }
+            }
+        }
 
         public static string DecryptParams(string cipherText, string key = "abc123abc123abc123abc123abc12312", string ivString = "1234567890123456")
         {
@@ -124,8 +154,6 @@ namespace BackendMusica.Services
             string base64Pattern = @"^[a-zA-Z0-9\+/]*={0,2}$";
             return Regex.IsMatch(base64, base64Pattern, RegexOptions.None);
         }
-
-
 
         #endregion
     }

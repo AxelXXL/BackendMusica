@@ -1,4 +1,5 @@
 ﻿using BackendMusica.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,6 +81,49 @@ namespace BackendMusica.Services
         }
         #endregion
 
+        #region Create
+
+        public HttpResponseMessage CreateUser(string newUser)
+        {
+            try
+            {
+                string decryptJson = Security.DecryptParams(newUser);
+
+                tb_Usuario createNewUser = JsonConvert.DeserializeObject<tb_Usuario>(decryptJson);
+
+                if(createNewUser.Contrasena == createNewUser.ConfirmarContrasena)
+                {
+                    createNewUser.Contrasena = Security.Encrypt(createNewUser.Contrasena);
+                }
+                else
+                {
+                    return new HttpResponseMessage(HttpStatusCode.Conflict)
+                    {
+                        Content = new StringContent("Las contraseñas no coinciden")
+                    };
+                }
+
+                db.tb_Usuario.Add(createNewUser);
+                db.SaveChanges();
+
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent($"Usuario {createNewUser.Nombre_Usuario} creado correctamente.")
+                };
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                {
+                    Content = new StringContent($"Ocurrió un error inesperado. Más información: {ex.Message}")
+                };
+            }
+        }
+
+        #endregion
+
         #region Edit
         public HttpResponseMessage EditUser(string ID_User, EditRequestUser EditUser)
         {
@@ -138,11 +182,16 @@ namespace BackendMusica.Services
         #endregion
 
         #region Delete
-        public HttpResponseMessage DeleteUser(int ID_User)
+        public HttpResponseMessage DeleteUser(string ID_User)
         {
             try
             {
-                var user = db.tb_Usuario.Where(x => x.ID_USUARIO == ID_User).FirstOrDefault();
+
+                string decryptID = Security.DecryptParams(ID_User);
+                int idUser;
+                int.TryParse(decryptID, out idUser);
+
+                var user = db.tb_Usuario.Where(x => x.ID_USUARIO == idUser).FirstOrDefault();
 
                 if (user == null)
                 {

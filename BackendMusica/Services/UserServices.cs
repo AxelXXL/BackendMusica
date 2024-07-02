@@ -5,21 +5,34 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
-using System.Web;
 
 namespace BackendMusica.Services
 {
     public class UserServices : BaseServices
     {
-        public HttpResponseMessage GetUsers(int? IdUser)
+
+        #region Get
+        public HttpResponseMessage GetUsers(string IdUser = null)
         {
             try
             {
+                int idUser;
+                if (!string.IsNullOrEmpty(IdUser))
+                {
+                    string decryptID = Security.DecryptParams(IdUser);
+                    int.TryParse(decryptID, out idUser);
+                }
+                else
+                {
+                    idUser = 0;
+                }
+                
+
                 IEnumerable<object> users;
 
-                if (IdUser != null)
+                if (idUser != 0)
                 {
-                    users = db.tb_Usuario.Where(x => x.ID_USUARIO == IdUser).Select(x => new
+                    users = db.tb_Usuario.Where(x => x.ID_USUARIO == idUser).Select(x => new
                     {
                         x.ID_USUARIO,
                         x.Nombre_Usuario,
@@ -56,11 +69,27 @@ namespace BackendMusica.Services
             }
         }
 
-        public HttpResponseMessage EditUser(int ID_User, EditRequestUser EditUser)
+        public HttpResponseMessage GetRoles()
+        {
+            var roles = db.tb_RolesPrivacidad.Select(x => new {x.ID_ROL, x.Rol, x.Description}).ToList();
+
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new ObjectContent<List<object>>(roles.Cast<object>().ToList(), new JsonMediaTypeFormatter())
+            };
+        }
+        #endregion
+
+        #region Edit
+        public HttpResponseMessage EditUser(string ID_User, EditRequestUser EditUser)
         {
             try
             {
-                var userExist = db.tb_Usuario.Where(x => x.ID_USUARIO == ID_User).FirstOrDefault();
+                string decryptID = Security.DecryptParams(ID_User);
+                int idUser;
+                int.TryParse(decryptID, out idUser);
+
+                var userExist = db.tb_Usuario.Where(x => x.ID_USUARIO == idUser).FirstOrDefault();
 
                 if(userExist == null)
                 {
@@ -106,7 +135,9 @@ namespace BackendMusica.Services
                 };
             }
         }
+        #endregion
 
+        #region Delete
         public HttpResponseMessage DeleteUser(int ID_User)
         {
             try
@@ -142,6 +173,8 @@ namespace BackendMusica.Services
                 };
             }
         }
+
+        #endregion
 
 
     }

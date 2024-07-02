@@ -24,16 +24,23 @@ namespace BackendMusica.Controllers
         [Auth]
         [System.Web.Http.Route("api/GetUsuarios")]
         [System.Web.Http.HttpGet]
-        public HttpResponseMessage GetUsers(int? ID_User)
+        public HttpResponseMessage GetUsers(string ID_User)
         {
             return _userServices.GetUsers(ID_User);
         }
-        
-        
+
+        [Auth]
+        [System.Web.Http.Route("api/GetRoles")]
+        [System.Web.Http.HttpGet]
+        public HttpResponseMessage GetRoles()
+        {
+            return _userServices.GetRoles();
+        }
+
         [Auth]
         [System.Web.Http.Route("api/EditUser")]
         [System.Web.Http.HttpPost]
-        public HttpResponseMessage EditUser(int ID_User,[FromBody] EditRequestUser user)
+        public HttpResponseMessage EditUser(string ID_User,[FromBody] EditRequestUser user)
         {
             return _userServices.EditUser(ID_User, user);
         }

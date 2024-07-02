@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 
 namespace BackendMusica.Services
@@ -65,6 +66,66 @@ namespace BackendMusica.Services
                 }
             }
         }
+
+        public static string DecryptParams(string cipherText, string key = "abc123abc123abc123abc123abc12312", string ivString = "1234567890123456")
+        {
+            try
+            {
+                if (!IsBase64String(cipherText))
+                {
+                    throw new FormatException("La cadena no es una cadena Base64 válida.");
+                }
+
+                cipherText = cipherText.Trim().Replace(" ", "+");
+
+                byte[] cipherBytes = Convert.FromBase64String(cipherText);
+                byte[] keyBytes = Encoding.UTF8.GetBytes(key);
+                byte[] ivBytes = Encoding.UTF8.GetBytes(ivString);
+
+                using (Aes encryptor = Aes.Create())
+                {
+                    encryptor.Key = keyBytes;
+                    encryptor.IV = ivBytes;
+                    encryptor.Mode = CipherMode.CBC;
+                    encryptor.Padding = PaddingMode.PKCS7;
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
+                        {
+                            cs.Write(cipherBytes, 0, cipherBytes.Length);
+                        }
+                        return Encoding.UTF8.GetString(ms.ToArray());
+                    }
+                }
+            }
+            catch (CryptographicException ex)
+            {
+                throw new Exception("Error al descifrar los datos: " + ex.Message);
+            }
+            catch (FormatException ex)
+            {
+                throw new Exception("Formato inválido para Base64: " + ex.Message);
+            }
+        }
+
+
+        public static bool IsBase64String(string base64)
+        {
+            base64 = base64.Trim().Replace(" ", "+");
+
+            // Verificar que la longitud sea múltiplo de 4
+            if (base64.Length % 4 != 0)
+            {
+                return false;
+            }
+
+            // Verificar si los caracteres son válidos para Base64
+            string base64Pattern = @"^[a-zA-Z0-9\+/]*={0,2}$";
+            return Regex.IsMatch(base64, base64Pattern, RegexOptions.None);
+        }
+
+
 
         #endregion
     }

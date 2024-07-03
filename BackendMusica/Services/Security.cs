@@ -101,14 +101,17 @@ namespace BackendMusica.Services
         {
             try
             {
-                if (!IsBase64String(cipherText))
+                // Decodificar la cadena de URL a Base64
+                string decodedCipherText = System.Net.WebUtility.UrlDecode(cipherText);
+
+                if (!IsBase64String(decodedCipherText))
                 {
                     throw new FormatException("La cadena no es una cadena Base64 válida.");
                 }
 
-                cipherText = cipherText.Trim().Replace(" ", "+");
+                decodedCipherText = decodedCipherText.Trim().Replace(" ", "+");
 
-                byte[] cipherBytes = Convert.FromBase64String(cipherText);
+                byte[] cipherBytes = Convert.FromBase64String(decodedCipherText);
                 byte[] keyBytes = Encoding.UTF8.GetBytes(key);
                 byte[] ivBytes = Encoding.UTF8.GetBytes(ivString);
 

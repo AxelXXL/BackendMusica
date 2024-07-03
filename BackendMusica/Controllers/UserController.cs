@@ -38,9 +38,9 @@ namespace BackendMusica.Controllers
         }
 
         [Auth]
-        [System.Web.Http.Route("api/GetRoles")]
-        [System.Web.Http.HttpGet]
-        public HttpResponseMessage CreateUser(string newUser)
+        [System.Web.Http.Route("api/CreateUser")]
+        [System.Web.Http.HttpPost]
+        public HttpResponseMessage CreateUser([FromBody] string newUser)
         {
             return _userServices.CreateUser(newUser);
         }

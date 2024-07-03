@@ -58,7 +58,7 @@ namespace BackendMusica.Controllers
         [Auth]
         [System.Web.Http.Route("api/DeleteUser")]
         [System.Web.Http.HttpPost]
-        public HttpResponseMessage DeleteUser(string ID_User)
+        public HttpResponseMessage DeleteUser([FromBody] string ID_User)
         {
             return _userServices.DeleteUser(ID_User);
         }

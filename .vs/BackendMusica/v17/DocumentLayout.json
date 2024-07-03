@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\BackendMusica\\BackendMusica\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\services\\security.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\security.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{23B1223E-0A0E-4A4F-90D3-3DA5A2D7F893}|UnitTestMusic\\UnitTestMusic.csproj|C:\\BackendMusica\\BackendMusica\\unittestmusic\\securitytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23B1223E-0A0E-4A4F-90D3-3DA5A2D7F893}|UnitTestMusic\\UnitTestMusic.csproj|solutionrelative:unittestmusic\\securitytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\models\\extendmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,17 +34,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 67,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "BackendMusica\\Controllers\\UserController.cs",
               "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Controllers\\UserController.cs",
               "RelativeToolTip": "BackendMusica\\Controllers\\UserController.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAQwCoAAAA5AAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAYwDwAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-18T20:53:58.973Z",
               "IsPinned": true,
@@ -58,7 +58,7 @@
               "RelativeDocumentMoniker": "BackendMusica\\Services\\UserServices.cs",
               "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\UserServices.cs",
               "RelativeToolTip": "BackendMusica\\Services\\UserServices.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAFkAAAAQAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAxwH0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-18T20:53:32.738Z",
               "IsPinned": true,
@@ -90,7 +90,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SecurityTests.cs",
               "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\UnitTestMusic\\SecurityTests.cs",
               "RelativeDocumentMoniker": "UnitTestMusic\\SecurityTests.cs",
@@ -98,21 +98,19 @@
               "RelativeToolTip": "UnitTestMusic\\SecurityTests.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T05:10:52.484Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-02T05:10:52.484Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Security.cs",
               "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\Security.cs",
               "RelativeDocumentMoniker": "BackendMusica\\Services\\Security.cs",
               "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\Security.cs",
               "RelativeToolTip": "BackendMusica\\Services\\Security.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAmwG0AAAARAAAA",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAuwI4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T01:20:19.179Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T01:20:19.179Z"
             },
             {
               "$type": "Document",

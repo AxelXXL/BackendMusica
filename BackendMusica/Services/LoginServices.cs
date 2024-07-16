@@ -11,7 +11,6 @@ namespace BackendMusica.Services
 {
     public class LoginServices : BaseServices
     {
-        private readonly BD_LOSS_SOUNDSEntities db = new BD_LOSS_SOUNDSEntities();
 
         public HttpResponseMessage Register(RegisterModel user)
         {
@@ -31,7 +30,7 @@ namespace BackendMusica.Services
             }
 
 
-            var rol = db.tb_RolesPrivacidad.Where(x => x.ID_ROL == user.ID_Rol).FirstOrDefault();
+            var rol = db.Tb_Rol.Where(x => x.ID_Rol == user.ID_Rol).FirstOrDefault();
             if (rol == null)
             {
                 return new HttpResponseMessage(HttpStatusCode.NotFound)

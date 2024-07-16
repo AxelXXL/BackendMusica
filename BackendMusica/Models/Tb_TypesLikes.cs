@@ -12,13 +12,18 @@ namespace BackendMusica.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_DisLikeMusic
+    public partial class Tb_TypesLikes
     {
-        public int ID_DISLIKES { get; set; }
-        public int ID_USUARIO { get; set; }
-        public int ID_CANCION { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tb_TypesLikes()
+        {
+            this.Tb_LikeMusic = new HashSet<Tb_LikeMusic>();
+        }
     
-        public virtual tb_Cancion tb_Cancion { get; set; }
-        public virtual tb_Usuario tb_Usuario { get; set; }
+        public int ID_TypesLikes { get; set; }
+        public string Type { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tb_LikeMusic> Tb_LikeMusic { get; set; }
     }
 }

@@ -33,24 +33,24 @@ namespace BackendMusica.Services
 
                 if (idUser != 0)
                 {
-                    users = db.tb_Usuario.Where(x => x.ID_USUARIO == idUser).Select(x => new
+                    users = db.Tb_Usuario.Where(x => x.ID_Usuario == idUser).Select(x => new
                     {
-                        x.ID_USUARIO,
+                        x.ID_Usuario,
                         x.Nombre_Usuario,
-                        x.tb_RolesPrivacidad.ID_ROL,
-                        x.tb_RolesPrivacidad.Rol,
-                        x.Active
+                        x.Tb_Rol.ID_Rol,
+                        x.Tb_Rol.Rol,
+                        x.Activo
                     }).ToList();
                 }
                 else
                 {
-                    users = db.tb_Usuario.Select(x => new
+                    users = db.Tb_Usuario.Select(x => new
                     {
-                        x.ID_USUARIO,
+                        x.ID_Usuario,
                         x.Nombre_Usuario,
-                        x.tb_RolesPrivacidad.ID_ROL,
-                        x.tb_RolesPrivacidad.Rol,
-                        x.Active
+                        x.Tb_Rol.ID_Rol,
+                        x.Tb_Rol.Rol,
+                        x.Activo
                     }).ToList();
                 }
 
@@ -72,7 +72,7 @@ namespace BackendMusica.Services
 
         public HttpResponseMessage GetRoles()
         {
-            var roles = db.tb_RolesPrivacidad.Select(x => new {x.ID_ROL, x.Rol, x.Description}).ToList();
+            var roles = db.Tb_Rol.Select(x => new {x.ID_Rol, x.Rol, x.Descripcion}).ToList();
 
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
@@ -89,7 +89,7 @@ namespace BackendMusica.Services
             {
                 string decryptJson = Security.DecryptParams(newUser);
 
-                tb_Usuario createNewUser = JsonConvert.DeserializeObject<tb_Usuario>(decryptJson);
+                Tb_Usuario createNewUser = JsonConvert.DeserializeObject<Tb_Usuario>(decryptJson);
 
                 if(createNewUser.Contrasena == createNewUser.ConfirmarContrasena)
                 {
@@ -103,7 +103,7 @@ namespace BackendMusica.Services
                     };
                 }
 
-                db.tb_Usuario.Add(createNewUser);
+                db.Tb_Usuario.Add(createNewUser);
                 db.SaveChanges();
 
                 return new HttpResponseMessage(HttpStatusCode.OK)
@@ -133,7 +133,7 @@ namespace BackendMusica.Services
                 int idUser;
                 int.TryParse(decryptID, out idUser);
 
-                var userExist = db.tb_Usuario.Where(x => x.ID_USUARIO == idUser).FirstOrDefault();
+                var userExist = db.Tb_Usuario.Where(x => x.ID_Usuario == idUser).FirstOrDefault();
 
                 if(userExist == null)
                 {
@@ -145,13 +145,13 @@ namespace BackendMusica.Services
 
                 if (userExist.Nombre_Usuario != EditUser.Nombre_Usuario 
                     || userExist.ID_Rol != EditUser.ID_Rol
-                    || userExist.Active != EditUser.Active)
+                    || userExist.Activo != EditUser.Active)
                 {
-                    db.tb_Usuario.Attach(userExist);
+                    db.Tb_Usuario.Attach(userExist);
 
                     userExist.Nombre_Usuario = EditUser.Nombre_Usuario;
                     userExist.ID_Rol = EditUser.ID_Rol;
-                    userExist.Active = EditUser.Active;
+                    userExist.Activo = EditUser.Active;
 
                     db.Entry(userExist).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
@@ -191,7 +191,7 @@ namespace BackendMusica.Services
                 int idUser;
                 int.TryParse(decryptID, out idUser);
 
-                var user = db.tb_Usuario.Where(x => x.ID_USUARIO == idUser).FirstOrDefault();
+                var user = db.Tb_Usuario.Where(x => x.ID_Usuario == idUser).FirstOrDefault();
 
                 if (user == null)
                 {
@@ -202,7 +202,7 @@ namespace BackendMusica.Services
                 }
                 else
                 {
-                    db.tb_Usuario.Remove(user);
+                    db.Tb_Usuario.Remove(user);
                     db.SaveChanges();
 
                     return new HttpResponseMessage(HttpStatusCode.OK)

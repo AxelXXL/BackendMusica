@@ -9,49 +9,31 @@
 
 namespace BackendMusica.Models
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_Usuario
+    public partial class Tb_Usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_Usuario()
+        public Tb_Usuario()
         {
-            this.tb_Comentarios = new HashSet<tb_Comentarios>();
-            this.tb_DisLikeMusic = new HashSet<tb_DisLikeMusic>();
-            this.tb_LikeMusic = new HashSet<tb_LikeMusic>();
-            this.tb_Playlist = new HashSet<tb_Playlist>();
-            this.tb_Seguidos = new HashSet<tb_Seguidos>();
+            this.Tb_LikeMusic = new HashSet<Tb_LikeMusic>();
+            this.Tb_Playlist = new HashSet<Tb_Playlist>();
+            this.Tb_Seguidos = new HashSet<Tb_Seguidos>();
         }
     
-        public int ID_USUARIO { get; set; }
+        public int ID_Usuario { get; set; }
+        public int ID_Rol { get; set; }
         public string Nombre_Usuario { get; set; }
         public string Contrasena { get; set; }
-        public Nullable<int> ID_Rol { get; set; }
-        public bool Active { get; set; }
-
-        [JsonIgnore]
+        public bool Activo { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Comentarios> tb_Comentarios { get; set; }
-
-        [JsonIgnore]
+        public virtual ICollection<Tb_LikeMusic> Tb_LikeMusic { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_DisLikeMusic> tb_DisLikeMusic { get; set; }
-
-        [JsonIgnore]
+        public virtual ICollection<Tb_Playlist> Tb_Playlist { get; set; }
+        public virtual Tb_Rol Tb_Rol { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_LikeMusic> tb_LikeMusic { get; set; }
-
-        [JsonIgnore]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Playlist> tb_Playlist { get; set; }
-
-        [JsonIgnore]
-        public virtual tb_RolesPrivacidad tb_RolesPrivacidad { get; set; }
-
-        [JsonIgnore]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Seguidos> tb_Seguidos { get; set; }
+        public virtual ICollection<Tb_Seguidos> Tb_Seguidos { get; set; }
     }
 }

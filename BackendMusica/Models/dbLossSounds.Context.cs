@@ -15,10 +15,10 @@ namespace BackendMusica.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class BD_LOSS_SOUNDSEntities : DbContext
+    public partial class DBLossSoundsEntities : DbContext
     {
-        public BD_LOSS_SOUNDSEntities()
-            : base("name=BD_LOSS_SOUNDSEntities")
+        public DBLossSoundsEntities()
+            : base("name=DBLossSoundsEntities")
         {
         }
     
@@ -27,17 +27,16 @@ namespace BackendMusica.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ExceptionLog> ExceptionLog { get; set; }
-        public virtual DbSet<tb_Album> tb_Album { get; set; }
-        public virtual DbSet<tb_Artista> tb_Artista { get; set; }
-        public virtual DbSet<tb_Cancion> tb_Cancion { get; set; }
-        public virtual DbSet<tb_Comentarios> tb_Comentarios { get; set; }
-        public virtual DbSet<tb_DisLikeMusic> tb_DisLikeMusic { get; set; }
-        public virtual DbSet<tb_LikeMusic> tb_LikeMusic { get; set; }
-        public virtual DbSet<tb_Playlist> tb_Playlist { get; set; }
-        public virtual DbSet<tb_RolesPrivacidad> tb_RolesPrivacidad { get; set; }
-        public virtual DbSet<tb_Seguidos> tb_Seguidos { get; set; }
-        public virtual DbSet<tb_Usuario> tb_Usuario { get; set; }
+        public virtual DbSet<Tb_Album> Tb_Album { get; set; }
+        public virtual DbSet<Tb_Artista> Tb_Artista { get; set; }
+        public virtual DbSet<Tb_Cancion> Tb_Cancion { get; set; }
+        public virtual DbSet<Tb_LikeMusic> Tb_LikeMusic { get; set; }
+        public virtual DbSet<Tb_Playlist> Tb_Playlist { get; set; }
+        public virtual DbSet<Tb_PlaylistPrivacidad> Tb_PlaylistPrivacidad { get; set; }
+        public virtual DbSet<Tb_Rol> Tb_Rol { get; set; }
+        public virtual DbSet<Tb_Seguidos> Tb_Seguidos { get; set; }
+        public virtual DbSet<Tb_TypesLikes> Tb_TypesLikes { get; set; }
+        public virtual DbSet<Tb_Usuario> Tb_Usuario { get; set; }
     
         public virtual int sp_registerUser(string user, string password, Nullable<int> iD_Rol, ObjectParameter registrado, ObjectParameter mensaje)
         {

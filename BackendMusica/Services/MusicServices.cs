@@ -24,14 +24,14 @@ namespace BackendMusica.Services
                 IEnumerable<object> canciones;
                 if (ID_Cancion != null)
                 {
-                    canciones = db.tb_Cancion.Where(x => x.ID_CANCION == ID_Cancion).Select(x => new
+                    canciones = db.Tb_Cancion.Where(x => x.ID_Cancion == ID_Cancion).Select(x => new
                     {
-                        x.ID_CANCION,
+                        x.ID_Cancion,
                         x.Nombre_Cancion,
                         x.Numero_Cancion,
                         x.Duracion_Cancion,
-                        x.ID_ARTISTA,
-                        x.ID_ALBUM,
+                        x.ID_Artista,
+                        x.ID_Album,
                         x.Ruta_Audio,
                         x.Caratula_Cancion
                     }).ToList();
@@ -40,14 +40,14 @@ namespace BackendMusica.Services
                 }
                 else
                 {
-                    canciones = db.tb_Cancion.Select(x => new
+                    canciones = db.Tb_Cancion.Select(x => new
                     {
-                        x.ID_CANCION,
+                        x.ID_Cancion,
                         x.Nombre_Cancion,
                         x.Numero_Cancion,
                         x.Duracion_Cancion,
-                        x.ID_ARTISTA,
-                        x.ID_ALBUM,
+                        x.ID_Artista,
+                        x.ID_Album,
                         x.Ruta_Audio,
                         x.Caratula_Cancion
                     }).ToList();
@@ -88,14 +88,14 @@ namespace BackendMusica.Services
             {
                 IEnumerable<object> songs;
 
-                songs = db.tb_Cancion.Where(x => x.ID_ARTISTA == ID_Artist).Select(x => new
+                songs = db.Tb_Cancion.Where(x => x.ID_Artista == ID_Artist).Select(x => new
                 {
-                    x.ID_CANCION,
+                    x.ID_Cancion,
                     x.Nombre_Cancion,
                     x.Numero_Cancion,
                     x.Duracion_Cancion,
-                    x.ID_ARTISTA,
-                    x.ID_ALBUM,
+                    x.ID_Artista,
+                    x.ID_Album,
                     x.Ruta_Audio,
                     x.Caratula_Cancion
                 }).ToList();
@@ -129,13 +129,13 @@ namespace BackendMusica.Services
         {
             try
             {
-                var songs = db.tb_Cancion.Take(Take).
+                var songs = db.Tb_Cancion.Take(Take).
                     Select(x => new
                     {
-                        x.ID_CANCION,
+                        x.ID_Cancion,
                         x.Nombre_Cancion,
-                        x.tb_Artista.Nombre_Artista,
-                        x.tb_Album.Nombre_album,
+                        x.Tb_Artista.Nombre_Artista,
+                        x.Tb_Album.Nombre_Album,
                         x.Caratula_Cancion,
                         x.Ruta_Audio
                     }).ToList();
@@ -162,17 +162,17 @@ namespace BackendMusica.Services
         {
             try
             {
-                var items = db.tb_Cancion
+                var items = db.Tb_Cancion
                 .Where(x => x.Nombre_Cancion.Contains(txt)
-                || x.tb_Album.Nombre_album.Contains(txt)
-                || x.tb_Album.Genero.Contains(txt)
-                || x.tb_Artista.Nombre_Artista.Contains(txt))
+                || x.Tb_Album.Nombre_Album.Contains(txt)
+                || x.Tb_Album.Genero.Contains(txt)
+                || x.Tb_Artista.Nombre_Artista.Contains(txt))
                 .Select(x => new
                 {
-                    x.ID_CANCION,
+                    x.ID_Cancion,
                     x.Nombre_Cancion,
-                    x.tb_Artista.Nombre_Artista,
-                    x.tb_Album.Nombre_album
+                    x.Tb_Artista.Nombre_Artista,
+                    x.Tb_Album.Nombre_Album
                 })
                 .ToList();
 
@@ -199,14 +199,14 @@ namespace BackendMusica.Services
             {
                 IEnumerable<object> songs;
 
-                songs = db.tb_Cancion.Where(x => x.ID_ALBUM == ID_Album).Select(x => new
+                songs = db.Tb_Cancion.Where(x => x.ID_Album == ID_Album).Select(x => new
                 {
-                    x.ID_CANCION,
+                    x.ID_Cancion,
                     x.Nombre_Cancion,
                     x.Numero_Cancion,
                     x.Duracion_Cancion,
-                    x.ID_ARTISTA,
-                    x.ID_ALBUM,
+                    x.ID_Artista,
+                    x.ID_Album,
                     x.Ruta_Audio,
                     x.Caratula_Cancion
                 }).ToList();
@@ -262,14 +262,14 @@ namespace BackendMusica.Services
 
 
                         // Buscar si el artista ya existe en la bd
-                        var artistaID = (from a in db.tb_Artista
+                        var artistaID = (from a in db.Tb_Artista
                                          where a.Nombre_Artista == nomArtista
-                                         select a.ID_ARTISTA).FirstOrDefault();
+                                         select a.ID_Artista).FirstOrDefault();
 
                         // Buscar si el álbum ya existe en la bd
-                        var albumID = (from a in db.tb_Album
-                                       where a.Nombre_album == nomAlbum
-                                       select a.ID_ALBUM).FirstOrDefault();
+                        var albumID = (from a in db.Tb_Album
+                                       where a.Nombre_Album == nomAlbum
+                                       select a.ID_Album).FirstOrDefault();
 
                         if (artistaID != 0)
                         {
@@ -278,13 +278,13 @@ namespace BackendMusica.Services
                         else
                         {
                             // El artista no existe en la base de datos, crea un nuevo registro
-                            tb_Artista artista = new tb_Artista
+                            Tb_Artista artista = new Tb_Artista
                             {
                                 Nombre_Artista = nomArtista,
                             };
-                            db.tb_Artista.Add(artista);
+                            db.Tb_Artista.Add(artista);
                             db.SaveChanges(); // Guardar el artista para obtener su ID
-                            artistaID = artista.ID_ARTISTA; // Obtener el ID del artista recién creado
+                            artistaID = artista.ID_Artista; // Obtener el ID del artista recién creado
                         }
 
                         if (albumID != 0)
@@ -294,30 +294,30 @@ namespace BackendMusica.Services
                         else
                         {
                             // El álbum no existe en la base de datos, crea un nuevo registro
-                            tb_Album album = new tb_Album
+                            Tb_Album album = new Tb_Album
                             {
-                                Nombre_album = nomAlbum,
+                                Nombre_Album = nomAlbum,
                                 Genero = genero,
                                 Año_Album = añoAlbum,
-                                ID_ARTISTA = artistaID, // Asignar el ID del artista
+                                ID_Artista = artistaID, // Asignar el ID del artista
                                 Caratula_Album = base64ImageBytes,
                             };
-                            db.tb_Album.Add(album);
+                            db.Tb_Album.Add(album);
                             db.SaveChanges(); // Guardar el álbum para obtener su ID
-                            albumID = album.ID_ALBUM; // Obtener el ID del álbum recién creado
+                            albumID = album.ID_Album; // Obtener el ID del álbum recién creado
                         }
 
-                        tb_Cancion cancion = new tb_Cancion
+                        Tb_Cancion cancion = new Tb_Cancion
                         {
                             Nombre_Cancion = tituloCancion,
                             Duracion_Cancion = duracionSegundos,
                             Numero_Cancion = numeroCancion,
-                            ID_ARTISTA = artistaID,
-                            ID_ALBUM = albumID,
+                            ID_Artista = artistaID,
+                            ID_Album = albumID,
                             Ruta_Audio = archivo,
                             Caratula_Cancion = base64ImageBytes,
                         };
-                        db.tb_Cancion.Add(cancion);
+                        db.Tb_Cancion.Add(cancion);
                         db.SaveChanges();
 
                         return new HttpResponseMessage(HttpStatusCode.OK)

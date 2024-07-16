@@ -22,7 +22,7 @@ namespace BackendMusica.Services
             {
                 if (Request.Files.Count > 0)
                 {
-                    var artist = db.tb_Artista.FirstOrDefault(x => x.ID_ARTISTA == ID_Artist);
+                    var artist = db.Tb_Artista.FirstOrDefault(x => x.ID_Artista == ID_Artist);
 
                     if (artist == null)
                     {

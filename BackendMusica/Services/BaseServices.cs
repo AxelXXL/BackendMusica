@@ -10,7 +10,7 @@ namespace BackendMusica.Services
 {
     public class BaseServices : Controller
     {
-        public readonly BD_LOSS_SOUNDSEntities db = new BD_LOSS_SOUNDSEntities();
+        public readonly DBLossSoundsEntities db = new DBLossSoundsEntities();
         public static readonly Logger logger = LogManager.GetCurrentClassLogger();
     }
 }

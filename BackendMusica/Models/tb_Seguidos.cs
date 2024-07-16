@@ -12,13 +12,13 @@ namespace BackendMusica.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_Seguidos
+    public partial class Tb_Seguidos
     {
-        public int ID_SEGUIDOS { get; set; }
-        public int ID_USUARIO { get; set; }
-        public int ID_ARTISTA { get; set; }
+        public int ID_Seguidos { get; set; }
+        public int ID_Usuario { get; set; }
+        public long ID_Artista { get; set; }
     
-        public virtual tb_Artista tb_Artista { get; set; }
-        public virtual tb_Usuario tb_Usuario { get; set; }
+        public virtual Tb_Artista Tb_Artista { get; set; }
+        public virtual Tb_Usuario Tb_Usuario { get; set; }
     }
 }

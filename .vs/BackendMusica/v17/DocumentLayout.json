@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "C:\\BackendMusica\\BackendMusica\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\nlog.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\nlog.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\services\\security.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\security.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23B1223E-0A0E-4A4F-90D3-3DA5A2D7F893}|UnitTestMusic\\UnitTestMusic.csproj|C:\\BackendMusica\\BackendMusica\\unittestmusic\\securitytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23B1223E-0A0E-4A4F-90D3-3DA5A2D7F893}|UnitTestMusic\\UnitTestMusic.csproj|c:\\backendmusica\\backendmusica\\unittestmusic\\securitytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23B1223E-0A0E-4A4F-90D3-3DA5A2D7F893}|UnitTestMusic\\UnitTestMusic.csproj|solutionrelative:unittestmusic\\securitytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\models\\extendmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\models\\extendmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\services\\artistsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\artistsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\models\\tb_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\models\\tb_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\services\\loginservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\loginservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\services\\baseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\baseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|c:\\backendmusica\\backendmusica\\backendmusica\\services\\api.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\services\\api.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|C:\\BackendMusica\\BackendMusica\\backendmusica\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5597D5-B7AC-4365-BF9B-E8C55C55D95F}|BackendMusica\\BackendMusica.csproj|solutionrelative:backendmusica\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,17 +46,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 67,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "BackendMusica\\Controllers\\UserController.cs",
               "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Controllers\\UserController.cs",
               "RelativeToolTip": "BackendMusica\\Controllers\\UserController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAYwDwAAAA5AAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAYwD4AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-18T20:53:58.973Z",
               "IsPinned": true,
@@ -52,16 +64,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "UserServices.cs",
               "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\UserServices.cs",
               "RelativeDocumentMoniker": "BackendMusica\\Services\\UserServices.cs",
               "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\UserServices.cs",
               "RelativeToolTip": "BackendMusica\\Services\\UserServices.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAxwH0AAAAAAAAA",
+              "ViewState": "AQIAAIkAAAAAAAAAAAAawJMAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-18T20:53:32.738Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NLog.config",
+              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\NLog.config",
+              "RelativeDocumentMoniker": "BackendMusica\\NLog.config",
+              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\NLog.config",
+              "RelativeToolTip": "BackendMusica\\NLog.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-07-16T01:35:31.763Z",
               "EditorCaption": ""
             },
             {
@@ -78,51 +103,81 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ExtendModel.cs",
-              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Models\\ExtendModel.cs",
-              "RelativeDocumentMoniker": "BackendMusica\\Models\\ExtendModel.cs",
-              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Models\\ExtendModel.cs",
-              "RelativeToolTip": "BackendMusica\\Models\\ExtendModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T22:38:07.695Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "SecurityTests.cs",
               "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\UnitTestMusic\\SecurityTests.cs",
               "RelativeDocumentMoniker": "UnitTestMusic\\SecurityTests.cs",
               "ToolTip": "C:\\BackendMusica\\BackendMusica\\UnitTestMusic\\SecurityTests.cs",
               "RelativeToolTip": "UnitTestMusic\\SecurityTests.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T05:10:52.484Z"
+              "WhenOpened": "2024-07-16T01:34:14.371Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Security.cs",
-              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\Security.cs",
-              "RelativeDocumentMoniker": "BackendMusica\\Services\\Security.cs",
-              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\Security.cs",
-              "RelativeToolTip": "BackendMusica\\Services\\Security.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAuwI4AAAAIAAAA",
+              "DocumentIndex": 3,
+              "Title": "ArtistsService.cs",
+              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\ArtistsService.cs",
+              "RelativeDocumentMoniker": "BackendMusica\\Services\\ArtistsService.cs",
+              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\ArtistsService.cs",
+              "RelativeToolTip": "BackendMusica\\Services\\ArtistsService.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAADgvyAAAABdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T01:20:19.179Z"
+              "WhenOpened": "2024-07-16T01:29:22.812Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "tb_Usuario.cs",
-              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Models\\tb_Usuario.cs",
-              "RelativeDocumentMoniker": "BackendMusica\\Models\\tb_Usuario.cs",
-              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Models\\tb_Usuario.cs",
-              "RelativeToolTip": "BackendMusica\\Models\\tb_Usuario.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAxwBkAAAAJAAAA",
+              "DocumentIndex": 4,
+              "Title": "LoginServices.cs",
+              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\LoginServices.cs",
+              "RelativeDocumentMoniker": "BackendMusica\\Services\\LoginServices.cs",
+              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\LoginServices.cs",
+              "RelativeToolTip": "BackendMusica\\Services\\LoginServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T04:45:15.324Z"
+              "WhenOpened": "2024-07-16T01:28:46.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseServices.cs",
+              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\BaseServices.cs",
+              "RelativeDocumentMoniker": "BackendMusica\\Services\\BaseServices.cs",
+              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\BaseServices.cs",
+              "RelativeToolTip": "BackendMusica\\Services\\BaseServices.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T01:19:07.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "API.cs",
+              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\API.cs",
+              "RelativeDocumentMoniker": "BackendMusica\\Services\\API.cs",
+              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Services\\API.cs",
+              "RelativeToolTip": "BackendMusica\\Services\\API.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T01:18:06.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Web.config",
+              "RelativeDocumentMoniker": "BackendMusica\\Web.config",
+              "ToolTip": "C:\\BackendMusica\\BackendMusica\\BackendMusica\\Web.config",
+              "RelativeToolTip": "BackendMusica\\Web.config",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAEwAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-07-16T01:10:16.671Z",
+              "EditorCaption": ""
             }
           ]
         },

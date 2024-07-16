@@ -12,35 +12,31 @@ namespace BackendMusica.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_Cancion
+    public partial class Tb_Cancion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_Cancion()
+        public Tb_Cancion()
         {
-            this.tb_Comentarios = new HashSet<tb_Comentarios>();
-            this.tb_DisLikeMusic = new HashSet<tb_DisLikeMusic>();
-            this.tb_LikeMusic = new HashSet<tb_LikeMusic>();
-            this.tb_Playlist = new HashSet<tb_Playlist>();
+            this.Tb_LikeMusic = new HashSet<Tb_LikeMusic>();
+            this.Tb_Playlist = new HashSet<Tb_Playlist>();
         }
     
-        public int ID_CANCION { get; set; }
-        public int ID_ARTISTA { get; set; }
-        public int ID_ALBUM { get; set; }
+        public long ID_Cancion { get; set; }
+        public long ID_Artista { get; set; }
+        public long ID_Album { get; set; }
         public string Nombre_Cancion { get; set; }
         public Nullable<decimal> Numero_Cancion { get; set; }
+        public byte[] File_Content { get; set; }
         public string Ruta_Audio { get; set; }
-        public int Duracion_Cancion { get; set; }
         public byte[] Caratula_Cancion { get; set; }
+        public int Duracion_Cancion { get; set; }
+        public bool Activo { get; set; }
     
-        public virtual tb_Album tb_Album { get; set; }
-        public virtual tb_Artista tb_Artista { get; set; }
+        public virtual Tb_Album Tb_Album { get; set; }
+        public virtual Tb_Artista Tb_Artista { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Comentarios> tb_Comentarios { get; set; }
+        public virtual ICollection<Tb_LikeMusic> Tb_LikeMusic { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_DisLikeMusic> tb_DisLikeMusic { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_LikeMusic> tb_LikeMusic { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Playlist> tb_Playlist { get; set; }
+        public virtual ICollection<Tb_Playlist> Tb_Playlist { get; set; }
     }
 }

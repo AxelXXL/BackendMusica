@@ -12,22 +12,19 @@ namespace BackendMusica.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_RolesPrivacidad
+    public partial class Tb_Rol
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_RolesPrivacidad()
+        public Tb_Rol()
         {
-            this.tb_Playlist = new HashSet<tb_Playlist>();
-            this.tb_Usuario = new HashSet<tb_Usuario>();
+            this.Tb_Usuario = new HashSet<Tb_Usuario>();
         }
     
-        public int ID_ROL { get; set; }
+        public int ID_Rol { get; set; }
         public string Rol { get; set; }
-        public string Description { get; set; }
+        public string Descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Playlist> tb_Playlist { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Usuario> tb_Usuario { get; set; }
+        public virtual ICollection<Tb_Usuario> Tb_Usuario { get; set; }
     }
 }

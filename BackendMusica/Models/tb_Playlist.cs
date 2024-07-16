@@ -12,17 +12,17 @@ namespace BackendMusica.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_Playlist
+    public partial class Tb_Playlist
     {
-        public int ID_PLAYLIST { get; set; }
-        public int ID_USUARIO { get; set; }
-        public int ID_CANCION { get; set; }
+        public int ID_Playlist { get; set; }
+        public int ID_Usuario { get; set; }
+        public long ID_Cancion { get; set; }
         public string Nombre_Playlist { get; set; }
         public Nullable<System.DateTime> Fecha_Creacion { get; set; }
-        public Nullable<int> ID_PRIVACIDAD { get; set; }
+        public Nullable<int> ID_PlayListPrivacidad { get; set; }
     
-        public virtual tb_Cancion tb_Cancion { get; set; }
-        public virtual tb_RolesPrivacidad tb_RolesPrivacidad { get; set; }
-        public virtual tb_Usuario tb_Usuario { get; set; }
+        public virtual Tb_Cancion Tb_Cancion { get; set; }
+        public virtual Tb_PlaylistPrivacidad Tb_PlaylistPrivacidad { get; set; }
+        public virtual Tb_Usuario Tb_Usuario { get; set; }
     }
 }

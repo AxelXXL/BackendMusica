@@ -12,13 +12,15 @@ namespace BackendMusica.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_LikeMusic
+    public partial class Tb_LikeMusic
     {
-        public int ID_LIKES { get; set; }
-        public int ID_USUARIO { get; set; }
-        public int ID_CANCION { get; set; }
+        public long ID_Likes { get; set; }
+        public int ID_TypesLikes { get; set; }
+        public int ID_Usuario { get; set; }
+        public long ID_Cancion { get; set; }
     
-        public virtual tb_Cancion tb_Cancion { get; set; }
-        public virtual tb_Usuario tb_Usuario { get; set; }
+        public virtual Tb_Cancion Tb_Cancion { get; set; }
+        public virtual Tb_TypesLikes Tb_TypesLikes { get; set; }
+        public virtual Tb_Usuario Tb_Usuario { get; set; }
     }
 }

@@ -300,55 +300,52 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbLossSounds.Context.cs">
+    <Compile Include="Models\DbLossSounds.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbLossSounds.Context.tt</DependentUpon>
+      <DependentUpon>DbLossSounds.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbLossSounds.cs">
+    <Compile Include="Models\DbLossSounds.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbLossSounds.tt</DependentUpon>
+      <DependentUpon>DbLossSounds.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbLossSounds.Designer.cs">
+    <Compile Include="Models\DbLossSounds.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbLossSounds.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ExceptionLog.cs">
-      <DependentUpon>dbLossSounds.tt</DependentUpon>
+      <DependentUpon>DbLossSounds.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ExtendModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\tb_Album.cs">
-      <DependentUpon>dbLossSounds.tt</DependentUpon>
+    <Compile Include="Models\Tb_Album.cs">
+      <DependentUpon>DbLossSounds.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tb_Artista.cs">
-      <DependentUpon>dbLossSounds.tt</DependentUpon>
+    <Compile Include="Models\Tb_Artista.cs">
+      <DependentUpon>DbLossSounds.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tb_Cancion.cs">
-      <DependentUpon>dbLossSounds.tt</DependentUpon>
+    <Compile Include="Models\Tb_Cancion.cs">
+      <DependentUpon>DbLossSounds.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tb_Comentarios.cs">
-      <DependentUpon>dbLossSounds.tt</DependentUpon>
+    <Compile Include="Models\Tb_LikeMusic.cs">
+      <DependentUpon>DbLossSounds.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tb_DisLikeMusic.cs">
-      <DependentUpon>dbLossSounds.tt</DependentUpon>
+    <Compile Include="Models\Tb_Playlist.cs">
+      <DependentUpon>DbLossSounds.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tb_LikeMusic.cs">
-      <DependentUpon>dbLossSounds.tt</DependentUpon>
+    <Compile Include="Models\Tb_PlaylistPrivacidad.cs">
+      <DependentUpon>DbLossSounds.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tb_Playlist.cs">
-      <DependentUpon>dbLossSounds.tt</DependentUpon>
+    <Compile Include="Models\Tb_Rol.cs">
+      <DependentUpon>DbLossSounds.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tb_RolesPrivacidad.cs">
-      <DependentUpon>dbLossSounds.tt</DependentUpon>
+    <Compile Include="Models\Tb_Seguidos.cs">
+      <DependentUpon>DbLossSounds.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tb_Seguidos.cs">
-      <DependentUpon>dbLossSounds.tt</DependentUpon>
+    <Compile Include="Models\Tb_TypesLikes.cs">
+      <DependentUpon>DbLossSounds.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tb_Usuario.cs">
-      <DependentUpon>dbLossSounds.tt</DependentUpon>
+    <Compile Include="Models\Tb_Usuario.cs">
+      <DependentUpon>DbLossSounds.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TokenModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -381,15 +378,15 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Models\dbLossSounds.Context.tt">
+    <Content Include="Models\DbLossSounds.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>dbLossSounds.Context.cs</LastGenOutput>
-      <DependentUpon>dbLossSounds.edmx</DependentUpon>
+      <DependentUpon>DbLossSounds.edmx</DependentUpon>
+      <LastGenOutput>DbLossSounds.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\dbLossSounds.tt">
+    <Content Include="Models\DbLossSounds.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbLossSounds.edmx</DependentUpon>
-      <LastGenOutput>dbLossSounds.cs</LastGenOutput>
+      <DependentUpon>DbLossSounds.edmx</DependentUpon>
+      <LastGenOutput>DbLossSounds.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -416,14 +413,14 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="Models\dbLossSounds.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbLossSounds.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\dbLossSounds.edmx.diagram">
-      <DependentUpon>dbLossSounds.edmx</DependentUpon>
-    </Content>
     <Content Include="NLog.config" />
+    <EntityDeploy Include="Models\DbLossSounds.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbLossSounds.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DbLossSounds.edmx.diagram">
+      <DependentUpon>DbLossSounds.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -447,6 +444,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Music\" />
     <Folder Include="Views\Artists\" />
     <Folder Include="Views\Login\" />
     <Folder Include="Views\Music\" />

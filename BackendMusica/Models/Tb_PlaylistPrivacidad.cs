@@ -12,24 +12,19 @@ namespace BackendMusica.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Tb_Album
+    public partial class Tb_PlaylistPrivacidad
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tb_Album()
+        public Tb_PlaylistPrivacidad()
         {
-            this.Tb_Cancion = new HashSet<Tb_Cancion>();
+            this.Tb_Playlist = new HashSet<Tb_Playlist>();
         }
     
-        public long ID_Album { get; set; }
-        public long ID_Artista { get; set; }
-        public string Nombre_Album { get; set; }
-        public string Genero { get; set; }
-        public Nullable<int> Año_Album { get; set; }
-        public byte[] Caratula_Album { get; set; }
-        public bool Activo { get; set; }
+        public int ID_PlayListPrivacidad { get; set; }
+        public string Privacidad { get; set; }
+        public string Descripcion { get; set; }
     
-        public virtual Tb_Artista Tb_Artista { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tb_Cancion> Tb_Cancion { get; set; }
+        public virtual ICollection<Tb_Playlist> Tb_Playlist { get; set; }
     }
 }

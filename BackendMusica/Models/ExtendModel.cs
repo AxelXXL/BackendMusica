@@ -9,7 +9,7 @@ namespace BackendMusica.Models
     {
     }
 
-    public partial class tb_Usuario
+    public partial class Tb_Usuario
     {
         public string ConfirmarContrasena { get; set; }
     }

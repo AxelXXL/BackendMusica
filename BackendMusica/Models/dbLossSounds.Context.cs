@@ -30,6 +30,7 @@ namespace BackendMusica.Models
         public virtual DbSet<Tb_Album> Tb_Album { get; set; }
         public virtual DbSet<Tb_Artista> Tb_Artista { get; set; }
         public virtual DbSet<Tb_Cancion> Tb_Cancion { get; set; }
+        public virtual DbSet<Tb_CancionContents> Tb_CancionContents { get; set; }
         public virtual DbSet<Tb_LikeMusic> Tb_LikeMusic { get; set; }
         public virtual DbSet<Tb_Playlist> Tb_Playlist { get; set; }
         public virtual DbSet<Tb_PlaylistPrivacidad> Tb_PlaylistPrivacidad { get; set; }

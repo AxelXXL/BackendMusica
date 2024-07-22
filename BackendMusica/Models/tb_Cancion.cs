@@ -26,7 +26,6 @@ namespace BackendMusica.Models
         public long ID_Album { get; set; }
         public string Nombre_Cancion { get; set; }
         public Nullable<decimal> Numero_Cancion { get; set; }
-        public byte[] File_Content { get; set; }
         public string Ruta_Audio { get; set; }
         public byte[] Caratula_Cancion { get; set; }
         public int Duracion_Cancion { get; set; }
@@ -34,6 +33,8 @@ namespace BackendMusica.Models
     
         public virtual Tb_Album Tb_Album { get; set; }
         public virtual Tb_Artista Tb_Artista { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual Tb_CancionContents Tb_CancionContents { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tb_LikeMusic> Tb_LikeMusic { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

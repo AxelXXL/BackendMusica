@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DBLossSoundsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DBLossSoundsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Tb_Album">
           <Key>
             <PropertyRef Name="ID_Album" />
@@ -35,11 +35,18 @@
           <Property Name="ID_Album" Type="bigint" Nullable="false" />
           <Property Name="Nombre_Cancion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Numero_Cancion" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="File_Content" Type="varbinary(max)" Nullable="false" />
           <Property Name="Ruta_Audio" Type="varchar" MaxLength="200" />
           <Property Name="Caratula_Cancion" Type="varbinary(max)" />
           <Property Name="Duracion_Cancion" Type="int" Nullable="false" />
           <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tb_CancionContents">
+          <Key>
+            <PropertyRef Name="ID_CancionContents" />
+          </Key>
+          <Property Name="ID_CancionContents" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Cancion" Type="bigint" Nullable="false" />
+          <Property Name="File_Content" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Tb_LikeMusic">
           <Key>
@@ -135,6 +142,18 @@
             </Principal>
             <Dependent Role="Tb_Cancion">
               <PropertyRef Name="ID_Artista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cancion_to_CancionContents">
+          <End Role="Tb_Cancion" Type="Self.Tb_Cancion" Multiplicity="1" />
+          <End Role="Tb_CancionContents" Type="Self.Tb_CancionContents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Cancion">
+              <PropertyRef Name="ID_Cancion" />
+            </Principal>
+            <Dependent Role="Tb_CancionContents">
+              <PropertyRef Name="ID_Cancion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -262,6 +281,7 @@
           <EntitySet Name="Tb_Album" EntityType="Self.Tb_Album" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tb_Artista" EntityType="Self.Tb_Artista" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tb_Cancion" EntityType="Self.Tb_Cancion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_CancionContents" EntityType="Self.Tb_CancionContents" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tb_LikeMusic" EntityType="Self.Tb_LikeMusic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tb_Playlist" EntityType="Self.Tb_Playlist" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tb_PlaylistPrivacidad" EntityType="Self.Tb_PlaylistPrivacidad" Schema="dbo" store:Type="Tables" />
@@ -280,6 +300,10 @@
           <AssociationSet Name="FK_Cancion_to_Artista" Association="Self.FK_Cancion_to_Artista">
             <End Role="Tb_Artista" EntitySet="Tb_Artista" />
             <End Role="Tb_Cancion" EntitySet="Tb_Cancion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cancion_to_CancionContents" Association="Self.FK_Cancion_to_CancionContents">
+            <End Role="Tb_Cancion" EntitySet="Tb_Cancion" />
+            <End Role="Tb_CancionContents" EntitySet="Tb_CancionContents" />
           </AssociationSet>
           <AssociationSet Name="FK_LIKES_TO_CANCION" Association="Self.FK_LIKES_TO_CANCION">
             <End Role="Tb_Cancion" EntitySet="Tb_Cancion" />
@@ -318,7 +342,8 @@
             <End Role="Tb_Usuario" EntitySet="Tb_Usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBLossSoundsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -343,10 +368,10 @@
           <Property Name="ID_Artista" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre_Artista" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="Imagen_Artista" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Tb_Album" Relationship="Self.FK_Album_to_Artista" FromRole="Tb_Artista" ToRole="Tb_Album" />
           <NavigationProperty Name="Tb_Cancion" Relationship="Self.FK_Cancion_to_Artista" FromRole="Tb_Artista" ToRole="Tb_Cancion" />
           <NavigationProperty Name="Tb_Seguidos" Relationship="Self.FK_SEGUIDAS_TO_ARTISTA" FromRole="Tb_Artista" ToRole="Tb_Seguidos" />
-          <Property Name="Imagen_Artista" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Tb_Cancion">
           <Key>
@@ -357,15 +382,24 @@
           <Property Name="ID_Album" Type="Int64" Nullable="false" />
           <Property Name="Nombre_Cancion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Numero_Cancion" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="File_Content" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="Ruta_Audio" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Caratula_Cancion" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Duracion_Cancion" Type="Int32" Nullable="false" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Tb_Album" Relationship="Self.FK_Cancion_to_Album" FromRole="Tb_Cancion" ToRole="Tb_Album" />
           <NavigationProperty Name="Tb_Artista" Relationship="Self.FK_Cancion_to_Artista" FromRole="Tb_Cancion" ToRole="Tb_Artista" />
+          <NavigationProperty Name="Tb_CancionContents" Relationship="Self.FK_Cancion_to_CancionContents" FromRole="Tb_Cancion" ToRole="Tb_CancionContents" />
           <NavigationProperty Name="Tb_LikeMusic" Relationship="Self.FK_LIKES_TO_CANCION" FromRole="Tb_Cancion" ToRole="Tb_LikeMusic" />
           <NavigationProperty Name="Tb_Playlist" Relationship="Self.FK_PlayList_to_Cancion" FromRole="Tb_Cancion" ToRole="Tb_Playlist" />
+        </EntityType>
+        <EntityType Name="Tb_CancionContents">
+          <Key>
+            <PropertyRef Name="ID_CancionContents" />
+          </Key>
+          <Property Name="ID_CancionContents" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Cancion" Type="Int64" Nullable="false" />
+          <Property Name="File_Content" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Tb_Cancion" Relationship="Self.FK_Cancion_to_CancionContents" FromRole="Tb_CancionContents" ToRole="Tb_Cancion" />
         </EntityType>
         <EntityType Name="Tb_LikeMusic">
           <Key>
@@ -491,6 +525,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Cancion_to_CancionContents">
+          <End Role="Tb_Cancion" Type="Self.Tb_Cancion" Multiplicity="1" />
+          <End Role="Tb_CancionContents" Type="Self.Tb_CancionContents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Cancion">
+              <PropertyRef Name="ID_Cancion" />
+            </Principal>
+            <Dependent Role="Tb_CancionContents">
+              <PropertyRef Name="ID_Cancion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_LIKES_TO_CANCION">
           <End Role="Tb_Cancion" Type="Self.Tb_Cancion" Multiplicity="1" />
           <End Role="Tb_LikeMusic" Type="Self.Tb_LikeMusic" Multiplicity="*" />
@@ -591,6 +637,7 @@
           <EntitySet Name="Tb_Album" EntityType="Self.Tb_Album" />
           <EntitySet Name="Tb_Artista" EntityType="Self.Tb_Artista" />
           <EntitySet Name="Tb_Cancion" EntityType="Self.Tb_Cancion" />
+          <EntitySet Name="Tb_CancionContents" EntityType="Self.Tb_CancionContents" />
           <EntitySet Name="Tb_LikeMusic" EntityType="Self.Tb_LikeMusic" />
           <EntitySet Name="Tb_Playlist" EntityType="Self.Tb_Playlist" />
           <EntitySet Name="Tb_PlaylistPrivacidad" EntityType="Self.Tb_PlaylistPrivacidad" />
@@ -613,6 +660,10 @@
           <AssociationSet Name="FK_SEGUIDAS_TO_ARTISTA" Association="Self.FK_SEGUIDAS_TO_ARTISTA">
             <End Role="Tb_Artista" EntitySet="Tb_Artista" />
             <End Role="Tb_Seguidos" EntitySet="Tb_Seguidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cancion_to_CancionContents" Association="Self.FK_Cancion_to_CancionContents">
+            <End Role="Tb_Cancion" EntitySet="Tb_Cancion" />
+            <End Role="Tb_CancionContents" EntitySet="Tb_CancionContents" />
           </AssociationSet>
           <AssociationSet Name="FK_LIKES_TO_CANCION" Association="Self.FK_LIKES_TO_CANCION">
             <End Role="Tb_Cancion" EntitySet="Tb_Cancion" />
@@ -681,10 +732,10 @@
           <EntitySetMapping Name="Tb_Artista">
             <EntityTypeMapping TypeName="DBLossSoundsModel.Tb_Artista">
               <MappingFragment StoreEntitySet="Tb_Artista">
-                <ScalarProperty Name="Imagen_Artista" ColumnName="Imagen_Artista" />
                 <ScalarProperty Name="ID_Artista" ColumnName="ID_Artista" />
                 <ScalarProperty Name="Nombre_Artista" ColumnName="Nombre_Artista" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Imagen_Artista" ColumnName="Imagen_Artista" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -696,11 +747,19 @@
                 <ScalarProperty Name="ID_Album" ColumnName="ID_Album" />
                 <ScalarProperty Name="Nombre_Cancion" ColumnName="Nombre_Cancion" />
                 <ScalarProperty Name="Numero_Cancion" ColumnName="Numero_Cancion" />
-                <ScalarProperty Name="File_Content" ColumnName="File_Content" />
                 <ScalarProperty Name="Ruta_Audio" ColumnName="Ruta_Audio" />
                 <ScalarProperty Name="Caratula_Cancion" ColumnName="Caratula_Cancion" />
                 <ScalarProperty Name="Duracion_Cancion" ColumnName="Duracion_Cancion" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_CancionContents">
+            <EntityTypeMapping TypeName="DBLossSoundsModel.Tb_CancionContents">
+              <MappingFragment StoreEntitySet="Tb_CancionContents">
+                <ScalarProperty Name="ID_CancionContents" ColumnName="ID_CancionContents" />
+                <ScalarProperty Name="ID_Cancion" ColumnName="ID_Cancion" />
+                <ScalarProperty Name="File_Content" ColumnName="File_Content" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

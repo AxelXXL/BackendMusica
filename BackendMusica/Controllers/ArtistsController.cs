@@ -21,12 +21,12 @@ namespace BackendMusica.Controllers
         }
         #endregion
 
-        [Auth]
-        [System.Web.Http.Route("api/UploadImageArtist")]
-        [System.Web.Http.HttpPost]
-        public HttpResponseMessage UploadImageArtist(int ID_Artist)
-        {
-            return _artistsServices.UploadImageArtist(ID_Artist);
-        }
+        //[Auth]
+        //[System.Web.Http.Route("api/UploadImageArtist")]
+        //[System.Web.Http.HttpPost]
+        //public HttpResponseMessage UploadImageArtist(int ID_Artist)
+        //{
+        //    return _artistsServices.UploadImageArtist(ID_Artist);
+        //}
     }
 }

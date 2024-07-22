@@ -4,21 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="235ba0d0dc134ca3b0cc064c64668bcd" Name="Diagram1">
-        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Album" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Artista" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Cancion" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_LikeMusic" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Playlist" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_PlaylistPrivacidad" Width="1.5" PointX="6" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Rol" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Seguidos" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_TypesLikes" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Usuario" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+      <Diagram DiagramId="6ae49857d32c447dbe8f3de212bef8bd" Name="Diagram1">
+        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Album" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Artista" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Cancion" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_CancionContents" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_LikeMusic" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Playlist" Width="1.5" PointX="7.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_PlaylistPrivacidad" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Rol" Width="1.5" PointX="1.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Seguidos" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_TypesLikes" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLossSoundsModel.Tb_Usuario" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <AssociationConnector Association="DBLossSoundsModel.FK_Album_to_Artista" ManuallyRouted="false" />
         <AssociationConnector Association="DBLossSoundsModel.FK_Cancion_to_Album" ManuallyRouted="false" />
         <AssociationConnector Association="DBLossSoundsModel.FK_Cancion_to_Artista" ManuallyRouted="false" />
         <AssociationConnector Association="DBLossSoundsModel.FK_SEGUIDAS_TO_ARTISTA" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLossSoundsModel.FK_Cancion_to_CancionContents" ManuallyRouted="false" />
         <AssociationConnector Association="DBLossSoundsModel.FK_LIKES_TO_CANCION" ManuallyRouted="false" />
         <AssociationConnector Association="DBLossSoundsModel.FK_PlayList_to_Cancion" ManuallyRouted="false" />
         <AssociationConnector Association="DBLossSoundsModel.FK_LIKES_TO_TYPELIKES" ManuallyRouted="false" />

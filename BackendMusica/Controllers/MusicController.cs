@@ -25,9 +25,9 @@ namespace BackendMusica.Controllers
         [Auth]
         [System.Web.Http.Route("api/Canciones")]
         [System.Web.Http.HttpGet]
-        public HttpResponseMessage GetCanciones(int? ID_Cancion)
+        public HttpResponseMessage GetCanciones(int? ID_Cancion, bool? fileContent)
         {
-            return _musicServices.GetCanciones(ID_Cancion);
+            return _musicServices.GetCanciones(ID_Cancion, fileContent);
         }
 
         [Auth]

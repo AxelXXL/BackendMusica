@@ -29,4 +29,15 @@ namespace BackendMusica.Models
         public byte[] File_Content { get; set; } // Propiedad para almacenar el contenido del archivo
     }
 
+    public class AlbumInfo
+    {
+        public long ID_Album { get; set; }
+        public long ID_Artista { get; set; }
+        public string Nombre_Album { get; set; }
+        public string Nombre_Artista { get; set; }
+        public string Genero { get; set; }
+        public Nullable<int> Año_Album { get; set; }
+        public byte[] Caratula_Album { get; set; }
+    }
+
 }

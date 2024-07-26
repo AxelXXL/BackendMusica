@@ -22,12 +22,21 @@ namespace BackendMusica.Controllers
 
         #region GET
 
+        #region Songs
         [Auth]
         [System.Web.Http.Route("api/Canciones")]
         [System.Web.Http.HttpGet]
-        public HttpResponseMessage GetCanciones(int? ID_Cancion, bool? fileContent)
+        public HttpResponseMessage GetCanciones(int? ID_Cancion)
         {
-            return _musicServices.GetCanciones(ID_Cancion, fileContent);
+            return _musicServices.GetCanciones(ID_Cancion);
+        }
+
+        [Auth]
+        [System.Web.Http.Route("api/GetSongData")]
+        [System.Web.Http.HttpGet]
+        public HttpResponseMessage GetSongData(int ID_Cancion)
+        {
+            return _musicServices.GetSongData(ID_Cancion);
         }
 
         [Auth]
@@ -37,7 +46,7 @@ namespace BackendMusica.Controllers
         {
             return _musicServices.GetSongsPerArtist(ID_Artist);
         }
-        
+
         [Auth]
         [System.Web.Http.Route("api/GetSongsPerAlbum")]
         [System.Web.Http.HttpGet]
@@ -53,7 +62,7 @@ namespace BackendMusica.Controllers
         {
             return _musicServices.GetNovedades(Take);
         }
-        
+
         [Auth]
         [System.Web.Http.Route("api/SearchSongs")]
         [System.Web.Http.HttpGet]
@@ -61,6 +70,18 @@ namespace BackendMusica.Controllers
         {
             return _musicServices.SearchSongs(txt);
         }
+        #endregion
+
+        #region Albums
+        [Auth]
+        [System.Web.Http.Route("api/GetAlbumsInfo")]
+        [System.Web.Http.HttpGet]
+        public HttpResponseMessage GetAlbumsInfo()
+        {
+            return _musicServices.GetAlbumsInfo();
+        }
+        #endregion
+
 
         #endregion
 

@@ -16,8 +16,8 @@ namespace BackendMusica.Services
     {
 
         #region GET
-        [System.Web.Http.HttpGet]
-        public HttpResponseMessage GetCanciones(int? ID_Cancion, bool? fileContent)
+        [HttpGet]
+        public HttpResponseMessage GetCanciones(int? ID_Cancion)
         {
             try
             {
@@ -25,54 +25,23 @@ namespace BackendMusica.Services
                 IEnumerable<CancionData> canciones;
                 if (ID_Cancion != null)
                 {
-                    if (fileContent.Value)
-                    {
-                        // Paso 1: Recuperar metadatos sin File_Content
-                        canciones = db.Tb_Cancion
-                            .Where(x => x.ID_Cancion == ID_Cancion)
-                            .Include(b => b.Tb_CancionContents)
-                            .Select(x => new CancionData
-                            {
-                                ID_Cancion = x.ID_Cancion,
-                                Nombre_Cancion = x.Nombre_Cancion,
-                                Numero_Cancion = x.Numero_Cancion,
-                                Duracion_Cancion = x.Duracion_Cancion,
-                                ID_Artista = x.ID_Artista,
-                                Nombre_Artista = x.Tb_Artista.Nombre_Artista,
-                                ID_Album = x.ID_Album,
-                                Nombre_Album = x.Tb_Album.Nombre_Album,
-                                Ruta_Audio = x.Ruta_Audio,
-                                Caratula_Cancion = x.Caratula_Cancion,
-                            }).ToList();
-
-                        // Paso 2: Recuperar File_Content por separado
-                        foreach (var cancion in canciones)
+                    canciones = db.Tb_Cancion
+                        .Where(x => x.ID_Cancion == ID_Cancion)
+                        .Include(b => b.Tb_CancionContents)
+                        .Select(x => new CancionData
                         {
-                            var contenido = db.Tb_CancionContents
-                                .Where(cc => cc.ID_Cancion == cancion.ID_Cancion)
-                                .Select(cc => cc.File_Content)
-                                .FirstOrDefault();
+                            ID_Cancion = x.ID_Cancion,
+                            Nombre_Cancion = x.Nombre_Cancion,
+                            Numero_Cancion = x.Numero_Cancion,
+                            Duracion_Cancion = x.Duracion_Cancion,
+                            ID_Artista = x.ID_Artista,
+                            Nombre_Artista = x.Tb_Artista.Nombre_Artista,
+                            ID_Album = x.ID_Album,
+                            Nombre_Album = x.Tb_Album.Nombre_Album,
+                            Ruta_Audio = x.Ruta_Audio,
+                            Caratula_Cancion = x.Caratula_Cancion,
+                        }).ToList();
 
-                            // Asignar el contenido recuperado a la propiedad adecuada
-                            cancion.File_Content = contenido;
-                        }
-                    }
-                    else
-                    {
-                            canciones = db.Tb_Cancion.Where(x => x.ID_Cancion == ID_Cancion).Select(x => new CancionData
-                            {
-                                ID_Cancion = x.ID_Cancion,
-                                Nombre_Cancion = x.Nombre_Cancion,
-                                Numero_Cancion = x.Numero_Cancion,
-                                Duracion_Cancion = x.Duracion_Cancion,
-                                ID_Artista = x.ID_Artista,
-                                Nombre_Artista = x.Tb_Artista.Nombre_Artista,
-                                ID_Album = x.ID_Album,
-                                Nombre_Album = x.Tb_Album.Nombre_Album,
-                                Ruta_Audio = x.Ruta_Audio,
-                                Caratula_Cancion = x.Caratula_Cancion,
-                            }).ToList();
-                     }
                     //logger.Info($"Se consulto metodo de canciones por parametro con el ID {ID_Cancion}");
                 }
                 else
@@ -118,7 +87,43 @@ namespace BackendMusica.Services
             }
         }
 
-        [System.Web.Http.HttpGet]
+        [HttpGet]
+        public HttpResponseMessage GetSongData(int ID_Cancion)
+        {
+            try
+            {
+                if (ID_Cancion == 0)
+                {
+                    return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                    {
+                        Content = new StringContent($"No se selecciono ninguna pista.")
+                    };
+                }
+
+                //Recuperar File_Content por separado
+                byte[] contenido = db.Tb_CancionContents
+                        .Where(cc => cc.ID_Cancion == ID_Cancion)
+                        .Select(cc => cc.File_Content)
+                        .AsNoTracking()
+                        .FirstOrDefault();
+
+
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new ObjectContent<byte[]>(contenido, new JsonMediaTypeFormatter())
+                };
+
+            }
+            catch (Exception)
+            {
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                {
+                    Content = new StringContent($"Ocurrió un error inesperado. Intenta más tarde.")
+                };
+            }
+        }
+
+        [HttpGet]
         public HttpResponseMessage GetSongsPerArtist(int ID_Artist)
         {
             try
@@ -183,7 +188,7 @@ namespace BackendMusica.Services
                 };
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 logger.Error($"Ocurrió un error inesperado. Más información: {ex}");
 
@@ -218,7 +223,7 @@ namespace BackendMusica.Services
                     Content = new ObjectContent<List<object>>(items.Cast<object>().ToList(), new JsonMediaTypeFormatter())
                 };
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 logger.Error(ex);
 
@@ -229,7 +234,7 @@ namespace BackendMusica.Services
             }
         }
 
-        [System.Web.Http.HttpGet]
+        [HttpGet]
         public HttpResponseMessage GetSongsPerAlbum(int ID_Album)
         {
             try
@@ -271,6 +276,38 @@ namespace BackendMusica.Services
                 };
             }
         }
+
+        [HttpGet]
+        public HttpResponseMessage GetAlbumsInfo()
+        {
+            try
+            {
+                List<AlbumInfo> albums = db.Tb_Album.
+                    Select(x => new AlbumInfo()
+                    {
+                        ID_Album = x.ID_Album,
+                        ID_Artista = x.ID_Artista,
+                        Nombre_Album = x.Nombre_Album,
+                        Nombre_Artista = x.Tb_Artista.Nombre_Artista,
+                        Genero = x.Genero,
+                        Año_Album = x.Año_Album,
+                        Caratula_Album = x.Caratula_Album,
+                    }).ToList();
+
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new ObjectContent<List<AlbumInfo>>(albums.Cast<AlbumInfo>().ToList(), new JsonMediaTypeFormatter())
+                };
+            }
+            catch(Exception)
+            {
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                {
+                    Content = new StringContent($"Ocurrió un error inesperado.")
+                };
+            }
+        }
+
         #endregion
 
         #region POST
@@ -332,6 +369,7 @@ namespace BackendMusica.Services
                                     Año_Album = añoAlbum,
                                     ID_Artista = artistaID, // Asignar el ID del artista
                                     Caratula_Album = base64ImageBytes,
+                                    Activo = true,
                                 };
                                 db.Tb_Album.Add(album);
                                 db.SaveChanges(); // Guardar el álbum para obtener su ID

@@ -79,6 +79,16 @@ namespace BackendMusica.Services
                 Content = new ObjectContent<List<object>>(roles.Cast<object>().ToList(), new JsonMediaTypeFormatter())
             };
         }
+
+        public HttpResponseMessage GetRol(int ID_Rol)
+        {
+            var rol = db.Tb_Rol.Where(x => x.ID_Rol == ID_Rol).Select(x => new { x.ID_Rol, x.Rol, x.Descripcion }).First();
+
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new ObjectContent<object>(rol, new JsonMediaTypeFormatter())
+            };
+        }
         #endregion
 
         #region Create
@@ -115,6 +125,41 @@ namespace BackendMusica.Services
             {
                 logger.Error(ex);
 
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                {
+                    Content = new StringContent($"Ocurrió un error inesperado. Más información: {ex.Message}")
+                };
+            }
+        }
+
+        public HttpResponseMessage CreateRol(string newRol)
+        {
+            try
+            {
+                string decryptJson = Security.DecryptParams(newRol);
+                Tb_Rol createNewRol = JsonConvert.DeserializeObject<Tb_Rol>(decryptJson);
+
+                var rolExists = db.Tb_Rol.Where(x => x.Rol.ToUpper() == createNewRol.Rol.ToUpper()).FirstOrDefault();
+
+                if(rolExists != null)
+                {
+                    return new HttpResponseMessage(HttpStatusCode.Conflict)
+                    {
+                        Content = new StringContent("Ya existe un rol con el nombre asignado.")
+                    };
+                }
+
+                db.Tb_Rol.Add(createNewRol);
+                db.SaveChanges();
+
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent("Rol creado exitosamente.")
+                };
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
                 return new HttpResponseMessage(HttpStatusCode.InternalServerError)
                 {
                     Content = new StringContent($"Ocurrió un error inesperado. Más información: {ex.Message}")
@@ -179,6 +224,49 @@ namespace BackendMusica.Services
                 };
             }
         }
+
+        public HttpResponseMessage EditRol(string ID_Rol, RolModel editRol)
+        {
+            try
+            {
+                string decryptID = Security.DecryptParams(ID_Rol);
+                int idRol;
+                int.TryParse(decryptID, out idRol);
+
+                var rolEqual = db.Tb_Rol.Where(x => x.Rol == editRol.Rol).FirstOrDefault();
+                var rolExist = db.Tb_Rol.Where(x => x.ID_Rol == editRol.ID_Rol).FirstOrDefault();
+
+                if (rolEqual == null)
+                {
+                    return new HttpResponseMessage(HttpStatusCode.NotFound)
+                    {
+                        Content = new StringContent("Ya existe un rol con el mismo nombre.")
+                    };
+                }
+
+                db.Tb_Rol.Attach(rolExist);
+
+                rolExist.Rol = editRol.Rol;
+                rolExist.Descripcion = editRol.Descripcion;
+
+                db.Entry(rolExist).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent($"El rol se edito correctamente.")
+                };
+
+            }
+            catch(Exception ex)
+            {
+                logger.Error(ex);
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                {
+                    Content = new StringContent($"Ocurrió un error inesperado. Más información: {ex.Message}")
+                };
+            }
+        }
         #endregion
 
         #region Delete
@@ -214,6 +302,34 @@ namespace BackendMusica.Services
 
             }
             catch(Exception ex)
+            {
+                logger.Error(ex);
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                {
+                    Content = new StringContent($"Ocurrió un error inesperado. Más información: {ex.Message}")
+                };
+            }
+        }
+
+        public HttpResponseMessage DeleteRol(string ID_Rol)
+        {
+            try
+            {
+                string decryptID = Security.DecryptParams(ID_Rol);
+                int idRol;
+                int.TryParse(decryptID, out idRol);
+
+                var rol = db.Tb_Rol.Where(x => x.ID_Rol == idRol).FirstOrDefault();
+
+                db.Tb_Rol.Remove(rol);
+                db.SaveChanges();
+
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent($"El rol se elimino correctamente.")
+                };
+            }
+            catch (Exception ex)
             {
                 logger.Error(ex);
                 return new HttpResponseMessage(HttpStatusCode.InternalServerError)

@@ -27,6 +27,7 @@ namespace BackendMusica.Models
         public string Nombre_Usuario { get; set; }
         public string Contrasena { get; set; }
         public bool Activo { get; set; }
+        public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tb_LikeMusic> Tb_LikeMusic { get; set; }

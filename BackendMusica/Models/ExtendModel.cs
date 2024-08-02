@@ -39,5 +39,13 @@ namespace BackendMusica.Models
         public Nullable<int> Año_Album { get; set; }
         public byte[] Caratula_Album { get; set; }
     }
+    
+
+    public class RolModel
+    {
+        public int ID_Rol { get; set; }
+        public string Rol { get; set; }
+        public string Descripcion { get; set; }
+    }
 
 }

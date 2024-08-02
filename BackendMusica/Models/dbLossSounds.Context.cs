@@ -39,11 +39,15 @@ namespace BackendMusica.Models
         public virtual DbSet<Tb_TypesLikes> Tb_TypesLikes { get; set; }
         public virtual DbSet<Tb_Usuario> Tb_Usuario { get; set; }
     
-        public virtual int sp_registerUser(string user, string password, Nullable<int> iD_Rol, ObjectParameter registrado, ObjectParameter mensaje)
+        public virtual int sp_registerUser(string user, string email, string password, Nullable<int> iD_Rol, ObjectParameter registrado, ObjectParameter mensaje)
         {
             var userParameter = user != null ?
                 new ObjectParameter("User", user) :
                 new ObjectParameter("User", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
     
             var passwordParameter = password != null ?
                 new ObjectParameter("Password", password) :
@@ -53,7 +57,7 @@ namespace BackendMusica.Models
                 new ObjectParameter("ID_Rol", iD_Rol) :
                 new ObjectParameter("ID_Rol", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_registerUser", userParameter, passwordParameter, iD_RolParameter, registrado, mensaje);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_registerUser", userParameter, emailParameter, passwordParameter, iD_RolParameter, registrado, mensaje);
         }
     
         public virtual ObjectResult<Nullable<int>> sp_ValidarUsuario(ObjectParameter loggeado, string user, string password)

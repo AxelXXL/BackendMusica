@@ -9,7 +9,6 @@
 
 namespace BackendMusica.Models
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -18,8 +17,7 @@ namespace BackendMusica.Models
         public long ID_CancionContents { get; set; }
         public long ID_Cancion { get; set; }
         public byte[] File_Content { get; set; }
-
-        [JsonIgnore]
+    
         public virtual Tb_Cancion Tb_Cancion { get; set; }
     }
 }

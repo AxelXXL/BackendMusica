@@ -17,6 +17,7 @@ namespace BackendMusica.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Tb_Cancion()
         {
+            this.Tb_CancionContents = new HashSet<Tb_CancionContents>();
             this.Tb_LikeMusic = new HashSet<Tb_LikeMusic>();
             this.Tb_Playlist = new HashSet<Tb_Playlist>();
         }

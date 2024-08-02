@@ -16,6 +16,15 @@ namespace BackendMusica.Services
         {
             bool registrado;
             string message;
+            var userExists = db.Tb_Usuario.Where(x => x.Nombre_Usuario == user.NombreUsuario || x.Email == user.Email).FirstOrDefault();
+
+            if(userExists != null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.Conflict)
+                {
+                    Content = new StringContent("El nombre de usuario o email ya estan existentes.")
+                };
+            }
 
             if (user.Contrasena == user.ConfirmPassword)
             {
@@ -29,7 +38,7 @@ namespace BackendMusica.Services
                 };
             }
 
-
+            
             var rol = db.Tb_Rol.Where(x => x.ID_Rol == user.ID_Rol).FirstOrDefault();
             if (rol == null)
             {
@@ -45,6 +54,7 @@ namespace BackendMusica.Services
                 cmd.Parameters.AddWithValue("User", user.NombreUsuario);
                 cmd.Parameters.AddWithValue("Password", user.Contrasena);
                 cmd.Parameters.AddWithValue("ID_Rol", 3);
+                cmd.Parameters.AddWithValue("Email", user.Email);
                 cmd.Parameters.Add("Registrado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                 cmd.CommandType = CommandType.StoredProcedure;

@@ -89,9 +89,19 @@ namespace BackendMusica.Controllers
         [Auth]
         [System.Web.Http.Route("api/SaveSong")]
         [System.Web.Http.HttpPost]
-        public HttpResponseMessage SaveMetadataSong(string archivo)
+        public HttpResponseMessage SaveMetadataSong([FromBody] string archivo)
         {
             return _musicServices.SaveMetadataSong(archivo);
+        }
+        #endregion
+
+        #region Delete
+        [Auth]
+        [System.Web.Http.Route("api/DeleteSong")]
+        [System.Web.Http.HttpPost]
+        public HttpResponseMessage DeleteSong([FromBody] int ID_Song)
+        {
+            return _musicServices.DeleteSong(ID_Song);
         }
         #endregion
     }

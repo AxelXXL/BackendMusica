@@ -26,7 +26,7 @@ namespace BackendMusica.Services
                 if (ID_Cancion != null)
                 {
                     canciones = db.Tb_Cancion
-                        .Where(x => x.ID_Cancion == ID_Cancion)
+                        .Where(x => x.ID_Cancion == ID_Cancion && x.Activo)
                         .Include(b => b.Tb_CancionContents)
                         .Select(x => new CancionData
                         {
@@ -46,7 +46,7 @@ namespace BackendMusica.Services
                 }
                 else
                 {
-                    canciones = db.Tb_Cancion.Select(x => new CancionData
+                    canciones = db.Tb_Cancion.Where(x => x.Activo).Select(x => new CancionData
                     {
                         ID_Cancion = x.ID_Cancion,
                         Nombre_Cancion = x.Nombre_Cancion,
@@ -385,6 +385,7 @@ namespace BackendMusica.Services
                                 ID_Album = albumID,
                                 Ruta_Audio = archivo,
                                 Caratula_Cancion = base64ImageBytes,
+                                Activo = true,
                             };
                             db.Tb_Cancion.Add(cancion);
                             db.SaveChanges();
@@ -424,6 +425,42 @@ namespace BackendMusica.Services
             }
         }
 
+
+        #endregion
+
+        #region Delete
+
+        public HttpResponseMessage DeleteSong(int ID_Song)
+        {
+            using (var tran = db.Database.BeginTransaction())
+            {
+                try
+                {
+                    var contentSong = db.Tb_CancionContents.Where(x => x.ID_Cancion == ID_Song).First();
+                    var metadataSong = db.Tb_Cancion.Find(ID_Song);
+
+                    db.Tb_CancionContents.Remove(contentSong);
+                    db.Tb_Cancion.Remove(metadataSong);
+
+                    db.SaveChanges();
+
+                    tran.Commit();
+                    return new HttpResponseMessage(HttpStatusCode.OK)
+                    {
+                        Content = new StringContent("Cancion eliminada exitosamente.")
+                    };
+
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    return new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                    {
+                        Content = new StringContent("Ocurrió un error inesperado. Más información: " + ex.Message)
+                    };
+                }
+            }
+        }
 
         #endregion
 
